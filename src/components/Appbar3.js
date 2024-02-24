@@ -5,6 +5,7 @@ import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
+import MakeUp from './MakeUp';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -39,14 +40,22 @@ function a11yProps(index) {
   };
 }
 
+// const a11yProps = (index) => {
+//   const id = `tab-${index}`;
+//   return {
+//     id,
+//     'aria-controls': `${id}-panel`,
+//   };
+// };
+
  const Appbar3 = () => {
-  const [value, setValue] = React.useState(-1);
+  const [value, setValue] = React.useState(null);
 
   const handleChange = ( newValue) => {
     setValue(newValue);
   };
   const handleTabLeave = () => {
-    setValue(-1);
+    setValue(null);
   }
 
   const loopingData = [{lable:'Make up', index:0, number:'-10px'},{lable:'Skin', index:1,number:'-35px'},{lable:'Hair', index:2,number:'-35px'},{lable:'Appliance', index:3,number:'-20px'},{lable:'Bath & Body', index:4,number:'-10px'},{lable:'Natural', index:5,number:'-10px'},{lable:'Mom & Baby', index:6,number:'-10px'},{lable:'Health wellness', index:7,number:'-10px'},{lable:'Men', index:8,number:'-10px'},{lable:'Fragrance', index:9,number:'-10px'},{lable:'Lingerie & Accessories', index:10,number:'-10px'},]
@@ -81,7 +90,7 @@ function a11yProps(index) {
         </Tabs>
       </Box>
       <CustomTabPanel value={value} index={0}>
-        Item One
+        <MakeUp />
         
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
