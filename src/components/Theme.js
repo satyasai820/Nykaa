@@ -16,4 +16,9 @@ theme.typography.p = {
     fontWeight:200,
 }
 
+theme.typography.h1= {
+    fontFamily:'"Arial", sans-serif',
+    fontSize:'25px',
+}
+
 export default theme;

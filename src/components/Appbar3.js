@@ -6,6 +6,16 @@ import Tab from '@mui/material/Tab';
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import MakeUp from './MakeUp';
+import Skin from './Skin';
+import Hair from './Hair';
+import Appliances from './Appliances';
+import Bath from './Bath';
+import Natural from './Natural';
+import Mom from './Mom';
+import Health from './Health';
+import Men from './Men';
+import Fragrance from './Fragrance';
+import Lingerie from './Lingerie';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -17,9 +27,18 @@ function CustomTabPanel(props) {
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
       {...other}
+        style={{
+      position:"absolute",
+        backgroundColor:"white",
+        
+        // top: 0,
+        // left: 0,
+        // width: { xs: '100%', md: '100%', lg: '65%' },  
+        zIndex:4, // Set z-index to 1 to make sure it's above the content
+      }}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
+        <Box sx={{ px: 0 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -40,13 +59,6 @@ function a11yProps(index) {
   };
 }
 
-// const a11yProps = (index) => {
-//   const id = `tab-${index}`;
-//   return {
-//     id,
-//     'aria-controls': `${id}-panel`,
-//   };
-// };
 
  const Appbar3 = () => {
   const [value, setValue] = React.useState(null);
@@ -62,8 +74,10 @@ function a11yProps(index) {
 
   return (
     <>
-    <Box sx={{ width:{md:'100%',lg:'65%'} , alignItems:'center', marginTop:{md:'95px', backgroundColor:'white',margin:'auto' }}} onMouseLeave={() => handleTabLeave(-1)}>
-      <Box sx={{ borderBottom: 1, borderColor: 'divider', border:'1px solid green',  }}>
+    {/* <AppBar> */}
+    <Box sx={{backgroundColor: 'white',}}>
+    <Box sx={{ width:{md:'100%',lg:'65%'} , alignItems:'center',marginTop:{md:'95px'}, display:{xs:'none', md:'block'},  backgroundColor:'white',margin:'auto', }} onMouseLeave={() => handleTabLeave(-1)}>
+      <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} indicatorColor="red" aria-label="basic tabs example">
             {loopingData.map((item) => (
           <Tab sx={{fontSize:'12px', textTransform: 'none', marginLeft:item.number , '&:hover': {
@@ -75,32 +89,48 @@ function a11yProps(index) {
                 
             ))}
             
-        {/* //   <Tab sx={{fontSize:'12px', textTransform: 'none', marginLeft:'-10px' }} label="Make up " {...a11yProps(0)} onMouseEnter={() => handleChange(0)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none', marginLeft:'-35px'  }} label="Skin" {...a11yProps(1)} onMouseEnter={() => handleChange(1)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none', marginLeft:'-35px' }} label="Hair" {...a11yProps(2)} onMouseEnter={() => handleChange(2)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none', marginLeft:'-20px'  }} label="Appliance" {...a11yProps(3)} onMouseEnter={() => handleChange(3)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none', marginLeft:'-10px'  }} label="Bath & Body" {...a11yProps(4)} onMouseEnter={() => handleChange(4)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none', marginLeft:'-10px' }} label="Natural" {...a11yProps(5)} onMouseEnter={() => handleChange(5)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none' , marginLeft:'-10px'  }} label="Mom & Baby" {...a11yProps(6)} onMouseEnter={() => handleChange(6)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none' , marginLeft:'-10px' }} label="Health wellness" {...a11yProps(7)} onMouseEnter={() => handleChange(7)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none' ,marginLeft:'-10px'  }} label="Men" {...a11yProps(8)} onMouseEnter={() => handleChange(8)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none' , marginLeft:'-9px'  }} label="Fragrance" {...a11yProps(9)} onMouseEnter={() => handleChange(9)} />
-        //   <Tab sx={{fontSize:'12px', textTransform: 'none' , marginLeft:'-10px'  }} label="Lingerie & Accessories" {...a11yProps(10)} onMouseEnter={() => handleChange(10)} /> */}
           
         </Tabs>
       </Box>
-      <CustomTabPanel value={value} index={0}>
+      <CustomTabPanel value={value} index={0} >
         <MakeUp />
         
       </CustomTabPanel>
       <CustomTabPanel value={value} index={1}>
-        Item Two
+        <Skin />
       </CustomTabPanel>
       <CustomTabPanel value={value} index={2}>
-        Item Three
+       <Hair />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={3}>
+       <Appliances />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={4}>
+       <Bath />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={5}>
+       <Natural />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={6}>
+       <Mom/>
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={7}>
+       <Health />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={8}>
+       <Men />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={9}>
+       <Fragrance />
+      </CustomTabPanel>
+      <CustomTabPanel value={value} index={10}>
+       <Lingerie />
       </CustomTabPanel>
     </Box>
+    </Box>
+    {/* </AppBar> */}
     </>
+    
   );
 }
 

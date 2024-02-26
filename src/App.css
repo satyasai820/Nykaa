@@ -36,3 +36,115 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
+/* swiper css */
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 20px;
+}
+
+.mySwiper {
+  width: 100%;
+  height: 450px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.swiper .swiper-button-next{
+  background-color: whitesmoke; /* Change to your desired color */
+  color: black !important; /* Text color */
+  width: 40px !important; /* Adjust the width to your desired size */
+  height: 40px !important; /* Adjust the height to your desired size */
+  border-radius: 40px;
+  /* opacity: ; */
+  line-height: 10px;
+  margin-left: 0px !important;
+}
+
+.swiper .swiper-button-prev{
+  background-color: whitesmoke; /* Change to your desired color */
+  color: black !important; /* Text color */
+  width: 40px !important; /* Adjust the width to your desired size */
+  height: 40px !important; /* Adjust the height to your desired size */
+  border-radius: 40px;
+  /* opacity: ; */
+  line-height: 10px;
+  margin-left: 0px !important;
+}
+
+
+
+/* Expore Swiper */
+
+.ExporeSwiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.ExporeSwiper .swiper-button-next{
+  background-color: whitesmoke; /* Change to your desired color */
+  color: black !important; /* Text color */
+  width: 40px !important; /* Adjust the width to your desired size */
+  height: 40px !important; /* Adjust the height to your desired size */
+  border-radius: 40px;
+  /* opacity: ; */
+  line-height: 10px;
+  margin-left: 0px !important;
+}
+
+.ExporeSwiper .swiper-button-prev{
+  background-color: whitesmoke; /* Change to your desired color */
+  color: black !important; /* Text color */
+  width: 40px !important; /* Adjust the width to your desired size */
+  height: 40px !important; /* Adjust the height to your desired size */
+  border-radius: 40px;
+  /* opacity: ; */
+  line-height: 10px;
+  margin-left: 0px !important;
+}
