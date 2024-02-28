@@ -133,33 +133,82 @@ body {
 }
 
 
-/* .LuxurySwiper .swiper-button-next{
-  background-color: whitesmoke; 
-  color: black !important; 
-  width: 40px !important; 
-  height: 40px !important; 
-  border-radius: 40px;
-  line-height: 10px;
-  margin-left: 0px !important;
-}
 
-.LuxurySwiper .swiper-button-prev{
-  background-color: whitesmoke; 
-  color: black !important;
-  width: 40px !important;
-  height: 40px !important; 
-  border-radius: 40px;
-  line-height: 10px;
-  margin-left: 0px !important;
-} */
 
 /* Radar Swiper */
 
 
 .RadarSwiper {
   width: 100%;
+  height: 330px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+  
+}
+
+
+@media screen and (max-width: 767px) {
+  .RadarSwiper {
+    height: 220px;
+  }
+}
+
+@media screen and (min-width: 768px)  {
+  .RadarSwiper {
+    height: 350px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .RadarSwiper {
+    height: 340px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .RadarSwiper {
+    height: 330px;
+  }
+}
+
+
+/* Hot List Swiper */
+
+.HotListSwiper {
+  width: 100%;
   height: 280px;
   margin: 20px auto;
   --swiper-navigation-size: '15px',
   
+}
+
+/* Vitamin Swiper */
+
+.VitaminSwiper {
+  width: 100%;
+  height: 190px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+  
+}
+
+.ProductSwiper {
+  width: 100%;
+  height: 290px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.BeautySwiper {
+  width: 100%;
+  height: 90px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.BeautySwiper2 {
+  width: 100%;
+  height: 390px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
 }

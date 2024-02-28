@@ -36,31 +36,22 @@ const ExporeSwiper = () => {
                     modules={[Pagination, Navigation]}
                     className="ExporeSwiper"
                     breakpoints={{
-                        // Large devices (lg)
                         1440: {
                           slidesPerView: 3,
-                          //   autoplay: false, 
                         },
                         1024: {
                           slidesPerView: 2,
-                          //   autoplay: false, 
                         },
-                        // Medium devices (md)
                         764: {
-                          slidesPerView: 2,
-                          //   autoplay: false, 
+                          slidesPerView: 2, 
                         },
-                        // Small devices (sm)
                         576: {
                           slidesPerView: 1,
-                          //   autoplay: true,
            
            
                         },
-                        // Extra small devices (xs)
                         0: {
                           slidesPerView: 1,
-                          //   autoplay: true,
            
            
                         },

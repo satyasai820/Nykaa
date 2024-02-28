@@ -8,6 +8,11 @@ import FlashBannerComponent from "../components/FlashBannerComponent";
 import FocusSwiperComponent from "../components/FocusSwiperComponent";
 import LuxuryComponent from "../components/LuxuryComponent";
 import RadarSwiperComponent from "../components/RadarSwiperComponent";
+import HotListSwiperComponent from "../components/HotListSwiperComponent";
+import StellerComponent from "../components/StellerComponent";
+import VitaminSwiperComponent from "../components/VitaminSwiperComponent";
+import ProductSwiperComponent from "../components/ProductSwiperComponent";
+import BeautySwiperComponent from "../components/BeautySwiperComponent";
 
 const Flash = () => {
     return(
@@ -21,6 +26,11 @@ const Flash = () => {
         <FocusSwiperComponent />
         <LuxuryComponent />
         <RadarSwiperComponent />
+        <HotListSwiperComponent />
+        <StellerComponent />
+        <VitaminSwiperComponent />
+        <ProductSwiperComponent />
+        <BeautySwiperComponent />
         </>
     )
 }

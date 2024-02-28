@@ -27,7 +27,7 @@ const RadarSwiperComponent = () => {
                         <Typography variant="h1"> On Our Radar</Typography>
                         <Typography variant="p" sx={{ fontSize: '15px' }}>Best-in-show brands</Typography>
                     </Grid>
-                    <Grid sx={{ border: '1px solid red', paddingBottom:'0px', marginBottom:'0px' }} >
+                    <Grid sx={{  paddingBottom:'0px', marginBottom:'0px'  }} >
                         <Swiper
                             spaceBetween={20}
                             navigation={true}
@@ -62,13 +62,13 @@ const RadarSwiperComponent = () => {
 
                                         <SwiperSlide>
                                             
-                                            {/* <Grid sx={{ border:'1px solid green'}}> */}
+                                            <Grid sx={{}}>
                                             <img src={item.img} alt="1" />
-                                            {/* <Grid sx={{ textAlign:'start',  }}> */}
-                                            {/* <Typography sx={{ fontWeight: 600, fontSize: '18px' }}>{item.discount}</Typography>
-                                            <Typography sx={{  fontSize: '12px', color: 'gray' }}>{item.product}</Typography> */}
-                                        {/* </Grid> */}
-                                        {/* </Grid> */}
+                                            <Grid sx={{ textAlign:'start', display:{xs:'none', sm:'block'}  }}>
+                                            <Typography sx={{ fontWeight: 600, fontSize: '14px' }}>{item.discount}</Typography>
+                                            <Typography sx={{  fontSize: '10px', color: 'gray' }}>{item.product}</Typography>
+                                        </Grid>
+                                        </Grid>
 
                                         </SwiperSlide>
                                        
@@ -76,6 +76,10 @@ const RadarSwiperComponent = () => {
                                 </>
                             ))}
                         </Swiper>
+                        <Grid sx={{marginLeft:{lg:'50px'}}}>
+                            <img   style={{ maxWidth: '100%', height: 'auto',}} src="https://images-static.nykaa.com/uploads/5d36aa1f-75e5-4132-86fb-b3564958749d.jpg?tr=w-1200,cm-pad_resize" alt="" />
+                           
+                        </Grid>
 
 
                     </Grid>
