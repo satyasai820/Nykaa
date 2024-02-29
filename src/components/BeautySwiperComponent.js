@@ -24,9 +24,9 @@ const BeautySwiperComponent = () => {
     return (
         <>
             <Grid container sx={{ justifyContent: 'center', background: 'white' }}>
-                <Grid sx={{ width: { xs: '95%', sm: '90%' }, border: '2px solid red' }}>
+                <Grid sx={{ width: { xs: '95%', sm: '90%' } }}>
                     <Grid sx={{ marginLeft: { lg: '50px' } }}>
-                        <img style={{ maxWidth: '100%', height: 'auto',  }} src="https://images-static.nykaa.com/uploads/c802253f-4056-42bb-aa92-387bde3b454f.jpg?tr=w-1200,cm-pad_resize" />
+                        <img style={{ maxWidth: '100%', height: 'auto',  }} src="https://images-static.nykaa.com/uploads/c802253f-4056-42bb-aa92-387bde3b454f.jpg?tr=w-1200,cm-pad_resize" alt="" />
                     </Grid>
                     <Grid>
                         <Swiper

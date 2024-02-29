@@ -13,6 +13,13 @@ import StellerComponent from "../components/StellerComponent";
 import VitaminSwiperComponent from "../components/VitaminSwiperComponent";
 import ProductSwiperComponent from "../components/ProductSwiperComponent";
 import BeautySwiperComponent from "../components/BeautySwiperComponent";
+import BeautyGudiesSwiperComponent from "../components/BeautyGudiesSwiperComponent";
+import SelfCareSwiperComponent from "../components/SelfCareSwiperComponent";
+import GiftComponent from "../components/GiftComponent";
+import SwatchSwiperComponent from "../components/SwatchSwiperComponent";
+import HandPickSwiperComponent from "../components/HandPickSwiperComponent";
+import LastSwiperComponent from "../components/LastSwiperComponent";
+import Footer from "../components/Footer";
 
 const Flash = () => {
     return(
@@ -31,6 +38,13 @@ const Flash = () => {
         <VitaminSwiperComponent />
         <ProductSwiperComponent />
         <BeautySwiperComponent />
+        <BeautyGudiesSwiperComponent />
+        <SelfCareSwiperComponent />
+        <GiftComponent />
+        <SwatchSwiperComponent />
+        <HandPickSwiperComponent />
+        <LastSwiperComponent />
+        <Footer />
         </>
     )
 }
