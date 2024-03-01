@@ -31,10 +31,7 @@ function CustomTabPanel(props) {
       position:"absolute",
         backgroundColor:"white",
         
-        // top: 0,
-        // left: 0,
-        // width: { xs: '100%', md: '100%', lg: '65%' },  
-        zIndex:4, // Set z-index to 1 to make sure it's above the content
+        zIndex:4,
       }}
     >
       {value === index && (

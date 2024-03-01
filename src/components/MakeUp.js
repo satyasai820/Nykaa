@@ -21,13 +21,13 @@ const MakeUp = () => {
                 <Grid item md={2}  sx={{padding:'0px 15px'}}>
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }} >Face</Typography>
                     {faceData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}
                 </Grid>
                 <Grid item md={2} sx={{backgroundColor:'#ebeae8', padding:'0px 15px'}}  >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', }}>Eyes</Typography>
                     {eyesData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px',  paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px',  paddingLeft: '5px' ,'&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', paddingTop:'15px' }}>Makeup Kits & Combos</Typography>
                     <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px' }}>Makeup Kits</Typography>
@@ -36,35 +36,35 @@ const MakeUp = () => {
                 <Grid item md={2} sx={{padding:'0px 15px'}}>
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }}>Lips</Typography>
                     {lipsData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>{item.name}</Typography>
                     ))}
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', paddingTop:'10px' }}>Nails</Typography>
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>Nails Polish</Typography>
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>Nails Art Kits</Typography>
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>Nails Care</Typography>
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>Nails Polish Remover</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>Nails Polish</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>Nails Art Kits</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>Nails Care</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>Nails Polish Remover</Typography>
                 </Grid>
                 <Grid item md={2} sx={{backgroundColor:'#ebeae8', padding:'0px 15px'}} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }}>Tools & Brushes</Typography>
                     {toolData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>{item.name}</Typography>
                     ))}
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', paddingTop:'9px' }}>Multi-Functional Makeup palettes</Typography>
                 </Grid>
                 <Grid item md={2} sx={{padding:'0px 15px'}} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }}>Top Brands</Typography>
                     {brandsData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>{item.name}</Typography>
                     ))}
                 </Grid>
                 <Grid item md={2} sx={{backgroundColor:'#ebeae8', padding:'0px 15px'}} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', backgroundColor: '#ebeae8' }}>Quick Links</Typography>
                     {quickData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', backgroundColor: '#ebeae8', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', backgroundColor: '#ebeae8', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>{item.name}</Typography>
                     ))}
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', backgroundColor: '#ebeae8', marginTop:'15px' }}>Trending Searches</Typography>
                     {quickData2.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', backgroundColor: '#ebeae8', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', backgroundColor: '#ebeae8', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>{item.name}</Typography>
                     ))}
                 </Grid>
 

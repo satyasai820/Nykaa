@@ -20,13 +20,13 @@ const Lingerie = () => {
                 <Grid item md={2} sx={{padding:'0px 25px' }} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }} >Lingerie</Typography>
                     {faceData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}
                 </Grid>
                 <Grid item md={2} sx={{backgroundColor:'#ebeae8', padding:'0px 25px' }}  >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', }}>Bags</Typography>
                     {eyesData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px',  paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px',  paddingLeft: '5px' ,'&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', paddingTop:'15px' }}>Makeup Kits & Combos</Typography>
                     <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px' }}>Makeup Kits</Typography>
@@ -35,25 +35,25 @@ const Lingerie = () => {
                 <Grid item md={2} sx={{padding:'0px 25px' }} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }}>Footware</Typography>
                     {lipsData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' ,'&:hover':{color:'#E80071'}}}>{item.name}</Typography>
                     ))}
                 </Grid>
                 <Grid item md={2} sx={{backgroundColor:'#ebeae8', padding:'0px 25px' }} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }}>Jewellery</Typography>
                     {toolData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}
                 </Grid>
                 <Grid item md={2} sx={{padding:'0px 25px' }} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }}>Home</Typography>
                     {brandsData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' ,'&:hover':{color:'#E80071'}}}>{item.name}</Typography>
                     ))}
                 </Grid>
                 <Grid item md={2} sx={{backgroundColor:'#ebeae8', padding:'0px 25px' }} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', backgroundColor: '#ebeae8' }}>Featured Brands</Typography>
                     {quickData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', backgroundColor: '#ebeae8', paddingLeft: '5px' }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px', backgroundColor: '#ebeae8', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}
                 </Grid>
 
