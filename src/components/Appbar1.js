@@ -38,7 +38,7 @@ const Appbar1 = () => {
         </Grid>
         <Grid sx={{ display: 'flex', alignItems: 'center', marginRight:{md:'15%',xl:'20%'} }}>
           <Icon style={{padding:'4px 0px', marginRight:'3px'}} icon="formkit:help" color="#000000" width="15" height="15" />
-          <Typography variant="p" sx={{  paddingRight:{xs:'2vim',sm:'15px'}, color: 'black','&:hover':{color:'white'} }}>Help</Typography>
+          <Typography variant="p" sx={{  paddingRight:{xs:'0px',sm:'15px'}, color: 'black','&:hover':{color:'white'} }}>Help</Typography>
         </Grid>
       </Grid>
 

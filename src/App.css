@@ -1,38 +1,238 @@
-.App {
+
+
+
+
+
+/* swiper css */
+
+#app {
+  height: 100%;
+}
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family:
+    Helvetica Neue,
+    Helvetica,
+    Arial,
+    sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  font-size: 18px;
+  /* Center slide text vertically */
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
 }
 
-.App-link {
-  color: #61dafb;
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.mySwiper {
+  width: 100%;
+  height: 450px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.swiper .swiper-button-next{
+  background-color: whitesmoke; /* Change to your desired color */
+  color: black !important; /* Text color */
+  width: 40px !important; /* Adjust the width to your desired size */
+  height: 40px !important; /* Adjust the height to your desired size */
+  border-radius: 40px;
+  /* opacity: ; */
+  line-height: 10px;
+  margin-left: 0px !important;
+}
+
+.swiper .swiper-button-prev{
+  background-color: whitesmoke; /* Change to your desired color */
+  color: black !important; /* Text color */
+  width: 40px !important; /* Adjust the width to your desired size */
+  height: 40px !important; /* Adjust the height to your desired size */
+  border-radius: 40px;
+  /* opacity: ; */
+  line-height: 10px;
+  margin-left: 0px !important;
+}
+
+
+
+/* Expore Swiper */
+
+.ExporeSwiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+  border-radius: 0px;
+}
+
+.ExporeSwiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+  
+}
+
+
+.ExporeSwiper .swiper-button-next{
+  background-color: whitesmoke; /* Change to your desired color */
+  color: black !important; /* Text color */
+  width: 40px !important; /* Adjust the width to your desired size */
+  height: 40px !important; /* Adjust the height to your desired size */
+  border-radius: 40px;
+  /* opacity: ; */
+  line-height: 10px;
+  margin-left: 0px !important;
+}
+
+.ExporeSwiper .swiper-button-prev{
+  background-color: whitesmoke; /* Change to your desired color */
+  color: black !important; /* Text color */
+  width: 40px !important; /* Adjust the width to your desired size */
+  height: 40px !important; /* Adjust the height to your desired size */
+  border-radius: 40px;
+  /* opacity: ; */
+  line-height: 10px;
+  margin-left: 0px !important;
+}
+
+
+/* Luxury Swiper */
+
+.LuxurySwiper {
+  width: 100%;
+  height: 100px;
+  margin: 20px auto;
+  --swiper-navigation-size: '22px',
+  
+}
+
+
+
+
+/* Radar Swiper */
+
+
+.RadarSwiper {
+  width: 100%;
+  height: 330px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+  
+}
+
+
+@media screen and (max-width: 767px) {
+  .RadarSwiper {
+    height: 220px;
   }
-  to {
-    transform: rotate(360deg);
+}
+
+@media screen and (min-width: 768px)  {
+  .RadarSwiper {
+    height: 350px;
   }
+}
+
+@media screen and (min-width: 769px) {
+  .RadarSwiper {
+    height: 340px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .RadarSwiper {
+    height: 330px;
+  }
+}
+
+
+/* Hot List Swiper */
+
+.HotListSwiper {
+  width: 100%;
+  height: 280px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+  
+}
+
+/* Vitamin Swiper */
+
+.VitaminSwiper {
+  width: 100%;
+  height: 190px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+  
+}
+
+.ProductSwiper {
+  width: 100%;
+  height: 290px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.BeautySwiper {
+  width: 100%;
+  height: 90px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.BeautySwiper2 {
+  width: 100%;
+  height: 390px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.selfSwiper {
+  width: 100%;
+  height: 130px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+
+.swatchSwiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+  
+}
+
+.lastSwiper {
+  width: 100%;
+  height: 350px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+  
 }
