@@ -52,7 +52,7 @@ const HotListSwiperComponent = () => {
 
                                 },
                                 320: {
-                                    slidesPerView: 2,
+                                    slidesPerView: 3,
 
 
                                 },
