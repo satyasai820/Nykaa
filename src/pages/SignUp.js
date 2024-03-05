@@ -1,14 +1,35 @@
 
 import React, { useState } from "react";
-import {  Grid, TextField, Typography } from "@mui/material";
+import { Grid, TextField, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
-import { auth } from "../firebase";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile , signInWithPopup} from "firebase/auth";
+import { auth ,provider } from "../firebase";
+
+
+  // google athentication 
+
+  export const googleAccount = (navigate) => {
+    signInWithPopup(auth, provider)
+        .then((result) => {
+            console.log("result", result);
+            navigate('/');
+            const token = result.user.accessToken;
+            localStorage.setItem('accessToken', token);
+            console.log('this is token google token man ', token);
+            const Name = result.user.displayName;
+            localStorage.setItem('displayName', Name)
+            console.log("this is the name by google", Name);
+
+        })
+        .catch((err) => {
+            console.log(err.message, 'error occured')
+        })
+}
 
 const SignUp = () => {
     const navigate = useNavigate();
-    
+
     const [isSignIn, setIsSignIn] = useState(true);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -36,7 +57,7 @@ const SignUp = () => {
     const handleButtonClick = async (e) => {
         e.preventDefault();
 
-        if(isSignIn){
+        if (isSignIn) {
 
             try {
                 const userCredential = await createUserWithEmailAndPassword(auth, email, password);
@@ -45,43 +66,64 @@ const SignUp = () => {
                     displayName: name,
                 });
                 console.log('this is the user', user);
-                const token = user.getIdToken();
-                
+                const token = await user.getIdToken();
+
                 localStorage.setItem('accessToken', token)
                 console.log('this is sign in token', token);
-                localStorage.setItem('displayName',userCredential.user.displayName )
+                localStorage.setItem('displayName', userCredential.user.displayName)
+                const Name = localStorage.getItem(user.displayName);
+
                 // console.log('User created successfully:', userCredential.user);
-                console.log('User display name:', userCredential.user.displayName);
+                console.log('User display name:', Name);
+                setEmail('');
+                setPassword('');
+                setName('');
+                navigate('/')
+
             } catch (error) {
                 console.error('Error creating user:', error.code, error.message);
             }
 
-        }else {
+        } else {
 
-            try{
+            try {
 
                 const userCredential = await signInWithEmailAndPassword(auth, email, password)
                 const user = userCredential.user;
                 const token = await user.getIdToken();
                 localStorage.setItem('accessToken', token);
-                console.log("this is the login token", token )
+                const Name = userCredential.user.displayName;
+                localStorage.setItem('displayName', Name)
+                localStorage.getItem('displayName', Name);
+                console.log('This is the name in log in ', Name);
+                console.log("this is the login token", token);
+                setEmail('');
+                setPassword('');
+                navigate('/')
             } catch (error) {
                 console.log(error, 'error occured')
             }
         }
-        
-    
-     
+
+
+
     };
 
     const toggleSignInMode = () => {
         setIsSignIn((prevIsSignIn) => !prevIsSignIn);
     };
 
+
+
+  
+
+
+
+
     return (
         <>
             <Grid container sx={{ justifyContent: 'center', }}>
-                <Grid sx={{ width: { xs: '90%', sm: '40%', md: '30%', lg: '25%', xl: '20%' }, border: '1px solid lightgrey', borderTopRightRadius:'20px', borderTopLeftRadius:'20px' ,marginTop: '60px', background: '#FFFFFF' }}>
+                <Grid sx={{ width: { xs: '90%', sm: '40%', md: '30%', lg: '25%', xl: '20%' }, border: '1px solid lightgrey', borderTopRightRadius: '20px', borderTopLeftRadius: '20px', marginTop: '60px', background: '#FFFFFF' }}>
                     <Grid sx={{ display: 'flex', marginTop: '20px', paddingBottom: '5px', borderBottom: '1px solid lightgray' }}>
                         <Grid>
                             <Icon onClick={() => navigate('/')} icon="iconamoon:close-light" width="25" height="25" />
@@ -93,9 +135,9 @@ const SignUp = () => {
                     </Grid>
                     <Grid container sx={{ justifyContent: 'center' }} >
                         {isSignIn ? (<Grid sx={{ marginTop: '40px', justifyContent: 'center' }}>
-                            <TextField placeholder="Enter Name" size="small" type="name" value={name }  onChange={changeHandleName} />
-                        </Grid>): (<Typography sx={{color:'#E80071', marginTop:'60px', fontWeight:'bold'}}>Please Log In</Typography>)}
-                        
+                            <TextField placeholder="Enter Name" size="small" type="name" value={name} onChange={changeHandleName} />
+                        </Grid>) : (<Typography sx={{ color: '#E80071', marginTop:{xs:'30px',sm:'60px'}, display:{xs:'none', sm:'block'}  , fontWeight: 'bold' }}>Please Log In</Typography>)}
+
                         <Grid sx={{ marginTop: '20px', }}>
                             <TextField placeholder="Enter Email" size="small" type="email" value={email} onChange={changeHandleEmail} />
                         </Grid>
@@ -103,13 +145,13 @@ const SignUp = () => {
                             <TextField placeholder="Enter Password" size="small" type="password" value={password} onChange={changeHandlePassword} />
                         </Grid>
                     </Grid>
-                    <Grid container sx={{ justifyContent: 'center', marginBottom:'20px', marginTop:'80px' }}>
-                        <Grid sx={{ textAlign: 'center', width:'70%', cursor:'pointer' }}>
+                    <Grid container sx={{ justifyContent: 'center', marginBottom: '20px', marginTop: '80px' }}>
+                        <Grid sx={{ textAlign: 'center', width: '70%', cursor: 'pointer' }}>
                             <Typography onClick={handleButtonClick} sx={{ border: '1px solid #E80071', backgroundColor: '#E80071', color: '#FFFFFF', fontWeight: 550, padding: '10px' }} >{isSignIn ? 'PROCEED' : 'Log In'} </Typography>
                         </Grid>
                     </Grid>
-                    <Grid sx={{textAlign:'center', marginBottom:'30px'}}>
-                        <Typography >{isSignIn ? 'Alredy have an account?'  : 'Don`t have an account?' }  <span style={{color:'#E80071', fontWeight:'bold', cursor:'pointer'}} onClick={toggleSignInMode} > {isSignIn ? 'Log In' : 'SignUP'}</span>  </Typography>
+                    <Grid sx={{ textAlign: 'center', marginBottom: '30px' }}>
+                        <Typography >{isSignIn ? 'Alredy have an account?' : 'Don`t have an account?'}  <span style={{ color: '#E80071', fontWeight: 'bold', cursor: 'pointer' }} onClick={toggleSignInMode} > {isSignIn ? 'Log In' : 'SignUP'}</span>  </Typography>
                     </Grid>
 
                 </Grid>
