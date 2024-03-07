@@ -4,7 +4,7 @@ import { createTheme } from "@mui/material";
 const theme = createTheme({
     palette:{
         background:{
-            default:'#fffff'
+            default:'#FFFFFF'
         }
     },
 })

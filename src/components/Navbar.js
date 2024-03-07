@@ -99,7 +99,7 @@ const Navbar = () => {
                         <Grid sx={{ marginRight: { xs: '5px', sm: '10px' }, marginLeft: { xs: '5px', sm: '10px' }, display: { xs: 'block', md: 'none', color: 'black' } }}>
                             <Icon onClick={handleOpen} icon="el:lines" width="20" height="20" />
                         </Grid>
-                        <Grid sx={{ cursor: 'pointer', }} >
+                        <Grid sx={{ cursor: 'pointer',}} onClick= {() => navigate('/')} >
                             <img src="https://cdn.iconscout.com/icon/free/png-256/free-nykaa-3384872-2822953.png?f=webp" alt="logo" width={60} height={60} />
                         </Grid>
                         <Grid sx={{ marginLeft: '20px', display: { xs: 'none', md: 'block' } }}>
