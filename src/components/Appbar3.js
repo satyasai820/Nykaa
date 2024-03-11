@@ -16,6 +16,7 @@ import Health from './Health';
 import Men from './Men';
 import Fragrance from './Fragrance';
 import Lingerie from './Lingerie';
+import { useNavigate } from 'react-router-dom';
 
 function CustomTabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -60,6 +61,7 @@ function a11yProps(index) {
  const Appbar3 = () => {
   const [value, setValue] = React.useState(null);
 
+  const navigate = useNavigate();
   const handleChange = ( newValue) => {
     setValue(newValue);
   };
@@ -67,15 +69,22 @@ function a11yProps(index) {
     setValue(null);
   }
 
-  const loopingData = [{lable:'Make up', index:0, number:'-10px'},{lable:'Skin', index:1,number:'-35px'},{lable:'Hair', index:2,number:'-35px'},{lable:'Appliance', index:3,number:'-20px'},{lable:'Bath & Body', index:4,number:'-10px'},{lable:'Natural', index:5,number:'-10px'},{lable:'Mom & Baby', index:6,number:'-10px'},{lable:'Health wellness', index:7,number:'-10px'},{lable:'Men', index:8,number:'-10px'},{lable:'Fragrance', index:9,number:'-10px'},{lable:'Lingerie & Accessories', index:10,number:'-10px'},]
+  const loopingData = [{lable:'Skin', index:1,number:'-35px'},{lable:'Hair', index:2,number:'-35px'},{lable:'Appliance', index:3,number:'-20px'},{lable:'Bath & Body', index:4,number:'-10px'},{lable:'Natural', index:5,number:'-10px'},{lable:'Mom & Baby', index:6,number:'-10px'},{lable:'Health wellness', index:7,number:'-10px'},{lable:'Men', index:8,number:'-10px'},{lable:'Fragrance', index:9,number:'-10px'},{lable:'Lingerie & Accessories', index:10,number:'-10px'},]
 
   return (
     <>
     {/* <AppBar> */}
-    <Box sx={{backgroundColor: 'white',}}>
+    <Box sx={{backgroundColor: 'white', marginBottom:'5px'}}>
     <Box sx={{ width:{md:'100%',lg:'65%'} , alignItems:'center',marginTop:{md:'95px'}, display:{xs:'none', md:'block'},  backgroundColor:'white',margin:'auto', }} onMouseLeave={() => handleTabLeave(-1)}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
         <Tabs value={value} onChange={handleChange} indicatorColor="red" aria-label="basic tabs example">
+
+        <Tab sx={{fontSize:'12px', textTransform: 'none', marginLeft:'-10px' , '&:hover': {
+            color: '#E80071',
+            borderBottom: '3px solid #E80071',
+            cursor: 'pointer',
+            
+          }, }} label='Make up' {...a11yProps(0)} onMouseEnter={() => handleChange(0)} onClick={()=> navigate('/makeup')} />
             {loopingData.map((item) => (
           <Tab sx={{fontSize:'12px', textTransform: 'none', marginLeft:item.number , '&:hover': {
             color: '#E80071',

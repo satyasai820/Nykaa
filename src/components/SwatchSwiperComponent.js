@@ -57,7 +57,7 @@ const SwatchSwiperComponent = () => {
                         <>
                            <SwiperSlide> 
                         <Grid sx={{marginLeft:'10px'}}>
-                            <Typography sx={{position:'absolute', marginTop:{xs:'240px',sm:'70%',md:'53%',lg:'55%' ,xl:'52%'},  fontWeight:600, fontSize:'18px' }}>Find Your Shadow</Typography>
+                            <Typography sx={{position:'absolute', marginTop:{xs:'200px',sm:'63%',md:'48%',lg:'52%' ,xl:'52%'},  fontWeight:600, fontSize:'18px' }}>Find Your Shadow</Typography>
                             <Typography  sx={{position:'absolute', marginTop:{xs:'260px',sm:'76%',md:'58%',lg:'60%',xl:'58%'},  fontSize:'12px', color:'gray'  }}>Top Foundation Swatches For You</Typography>
                         </Grid>
                         <img src={item.img}  alt="1" />

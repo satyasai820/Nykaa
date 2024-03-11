@@ -223,7 +223,7 @@ body {
 
 .swatchSwiper {
   width: 100%;
-  height: 300px;
+  height: 250px;
   margin: 20px auto;
   --swiper-navigation-size: '15px',
   
@@ -235,4 +235,120 @@ body {
   margin: 20px auto;
   --swiper-navigation-size: '15px',
   
+}
+
+
+.makeupSwiper {
+  width: 100%;
+  height: 300px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+
+}
+
+.makeupSecondSwiper {
+  width: 100%;
+  height: 150px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.makeupCardSwiper {
+  width: 100%;
+  height: 250px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+
+.makeupBarandsSwiper{
+  width: 100%;
+  height: 400px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+
+@media screen and (max-width: 767px) {
+  .makeupBarandsSwiper {
+    height: 360px;
+  }
+}
+
+@media screen and (min-width: 768px)  {
+  .makeupBarandsSwiper {
+    height: 330px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .makeupBarandsSwiper {
+    height: 320px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .makeupBarandsSwiper {
+    height: 400px;
+  }
+}
+
+.StremlineSwiper {
+  width: 100%;
+  height: 100px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.findSwiper {
+  width: 100%;
+  height: auto;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+
+.newSwiper {
+  width: 100%;
+  height: 260px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.aceSwiper {
+  width: 100%;
+  height: 280px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.GloballySwiper {
+  width: 100%;
+  height: 310px;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+@media screen and (max-width: 767px) {
+  .GloballySwiper {
+    height: 180px;
+  }
+}
+
+@media screen and (min-width: 768px)  {
+  .GloballySwiper {
+    height: 280px;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .GloballySwiper {
+    height: 280px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .GloballySwiper {
+    height: 310px;
+  }
 }

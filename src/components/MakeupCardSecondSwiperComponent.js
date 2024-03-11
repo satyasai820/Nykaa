@@ -14,18 +14,13 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
-const HotListSwiperComponent = () => {
+const MakeupCardSecondSwiperComponent = () => {
 
-    const cardData = [{img:'https://images-static.nykaa.com/media/catalog/product/0/c/0c9573cLOREA00000356_1.jpg', name:'L`Oreal Paris Hyaluron Moisture '},{img:'https://images-static.nykaa.com/media/catalog/product/5/f/5f397c18901023018251.jpg', name:'Maybelline New York Superstay Vinyl Ink'},{img:'https://images-static.nykaa.com/media/catalog/product/7/9/79fbe698906063411147_1.jpg?tr=w-344,h-344,cm-pad_resize', name:'BBLUNT Hot Shot Heat Protection Hair  '},{img:'https://images-static.nykaa.com/media/catalog/product/5/f/5f397c18901023018251.jpg', name:'L`Oreal Paris Hyaluron Moisture '},{img:'https://images-static.nykaa.com/media/catalog/product/6/f/6fa60d9MAMAE00000095_1.jpg', name:'L`Oreal Paris Hyaluron Moisture'},{img:'https://images-static.nykaa.com/media/catalog/product/b/8/b86d95d23657_S1-8901030983429.jpg', name:'L`Oreal Paris Hyaluron Moisture'},{img:'https://images-static.nykaa.com/media/catalog/product/2/4/24d3ea56902395854005_1.jpg', name:'BBLUNT Hot Shot Heat Protection Hair  '},{img:'https://images-static.nykaa.com/media/catalog/product/0/6/066c973N_8904052432975_1.jpg', name:'L`Oreal Paris Hyaluron Moisture'},{img:'https://images-static.nykaa.com/media/catalog/product/b/4/b40a64a8904231000421_1.jpg', name:'L`Oreal Paris Hyaluron Moisture '},{img:'https://images-static.nykaa.com/media/catalog/product/6/1/61894d98901247577022_1.jpg', name:'Ikonic Professional Glam Straightner (Black)'},{img:'https://images-static.nykaa.com/media/catalog/product/7/4/7439656LOVEE00000117_1a.jpg', name:'L`Oreal Paris Hyaluron Moisture'},{img:'https://images-static.nykaa.com/media/catalog/product/5/9/59d87f8LOREA00000421_1.jpg', name:'BBLUNT Hot Shot Heat Protection Hair  '},]
+    const cardData = [{img:'https://images-static.nykaa.com/media/catalog/product/b/c/bc452235060805942580_1.png', name:'L`Oreal Paris Hyaluron Moisture ',h:''},{img:'https://images-static.nykaa.com/media/catalog/product/d/3/d3d574eRELOV00000057_1.jpg', name:'Maybelline New York Superstay Vinyl Ink',h:'OFFER'},{img:'https://images-static.nykaa.com/media/catalog/product/9/e/9e1dc3a5060542725378_1July3.jpg', name:'BBLUNT Hot Shot Heat Protection Hair', h:'BESTSELLER'},{img:'https://images-static.nykaa.com/media/catalog/product/b/3/b3f9592843004103663_0.jpg', name:'L`Oreal Paris Hyaluron Moisture', h:'OFFER'},{img:'https://images-static.nykaa.com/media/catalog/product/f/4/f4a4faaSTAZE00000035_1.jpg', name:'L`Oreal Paris Hyaluron Moisture',h:'NEW'},{img:'https://images-static.nykaa.com/media/catalog/product/2/a/2a4cc5e8904320700027_newimg_1.jpg', name:'L`Oreal Paris Hyaluron Moisture',h:'OFFER'},{img:'https://images-static.nykaa.com/media/catalog/product/9/e/9e1dc3a5060542725378_1July3.jpg', name:'BBLUNT Hot Shot Heat Protection Hair',h:'NEW'},{img:'https://images-static.nykaa.com/media/catalog/product/3/6/36047888906087778288_1.jpg', name:'L`Oreal Paris Hyaluron Moisture',h:'OFFER'},{img:'https://images-static.nykaa.com/media/catalog/product/0/2/0274c23716170284736_1.jpg', name:'L`Oreal Paris Hyaluron Moisture ',h:'NEW'},{img:'https://images-static.nykaa.com/media/catalog/product/8/e/8efee3eSMASH00000388_1.jpg', name:'Ikonic Professional Glam Straightner (Black)',h:'NEW'},{img:'https://images-static.nykaa.com/media/catalog/product/d/2/d2347b8716170229157-0.jpg', name:'L`Oreal Paris Hyaluron Moisture',h:'OFFER'},{img:'https://images-static.nykaa.com/media/catalog/product/3/6/36047888906087778288_1.jpg', name:'BBLUNT Hot Shot Heat Protection Hair',h:'NEW'},]
     return (
         <>
             <Grid container sx={{ justifyContent: 'center', backgroundColor: 'white' }}>
-                <Grid sx={{ width: {xs:'95%' ,sm:'90%' }}}>
-                    <Grid sx={{ marginLeft: '30px', borderBottom: '1px solid lightgray', paddingBottom: '10px' }}>
-                        <Typography variant="h1"> Hot List</Typography>
-                        <Typography variant="p" sx={{ fontSize: '15px' }}>Nykaa's Super Sellers</Typography>
-
-                    </Grid>
+                <Grid sx={{ width: {xs:'95%' ,sm:'90%', lg:'80%' }}}>
                     <Grid >
                         <Swiper
                             spaceBetween={10}
@@ -64,6 +59,7 @@ const HotListSwiperComponent = () => {
 
 
                                     <SwiperSlide>
+                                       <Typography sx={{position:'absolute', fontSize:'9px', marginLeft:'10px', zIndex:'1', marginTop:'10px', fontWeight:550 }}>{item.h}</Typography>
 
                                         <Card sx={{ maxWidth: 160, boxShadow: 'none',  textAlign:'start' }}>
                                             <CardMedia
@@ -80,6 +76,7 @@ const HotListSwiperComponent = () => {
                                                 <Typography sx={{ position: 'absolute', bottom: '0', left: '0', right: '0', textAlign: 'start', background: 'rgba(255, 255, 255, 0.8)', padding: '4px', fontSize: '10px', fontWeight: 'bold', color: 'gray' }} >
                                                     4.4
                                                 </Typography>
+                                               
                                                 <Typography sx={{ position: 'absolute', bottom: '0', left: '0', right: '0', textAlign: 'start', marginLeft: '18px', color: 'gray' }} > <Icon icon="material-symbols-light:star" width="13" height="13" /> <span style={{ fontSize: '10px' }}>/5 (4.2%)</span></Typography>
                                             </CardMedia>
                                             <CardContent sx={{ display: 'block' }}>
@@ -108,4 +105,4 @@ const HotListSwiperComponent = () => {
     );
 }
 
-export default HotListSwiperComponent;
+export default MakeupCardSecondSwiperComponent;
