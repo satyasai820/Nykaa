@@ -1,9 +1,13 @@
 import React from "react";
 import { AppBar, Grid, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
+import { useNavigate } from "react-router-dom";
 
 
 const Appbar1 = () => {
+
+  const navigate = useNavigate();
+
     return(
         <>
         <AppBar sx={{ 
@@ -24,21 +28,21 @@ const Appbar1 = () => {
             </Grid>
         <Grid sx={{ display: 'flex', alignItems: 'center',}}>
         <Icon style={{padding:'4px 0px'}} icon="ant-design:mobile-outlined" color="#000000" width="20" height="20" />
-          <Typography variant="p" sx={{  paddingRight:{xs:'2vmin',sm:'15px'}, color: 'black', borderRight:'1px solid #000000', marginRight:{xs:'1vmin',sm:'10px'}, '&:hover':{color:'white'}  }}> Get App</Typography>
+          <Typography variant="p" sx={{  paddingRight:{xs:'2vmin',sm:'15px'}, cursor:'pointer',color: 'black', borderRight:'1px solid #000000', marginRight:{xs:'1vmin',sm:'10px'}, '&:hover':{color:'white'}  }}> Get App</Typography>
         </Grid>
         <Grid  sx={{ display: 'flex', alignItems: 'center',  }}>
            
           <Icon style={{padding:'4px 0px',}}  icon="carbon:location" color="#000000" width="20" height="20" />
-          <Typography variant="p" sx={{  paddingRight:{xs:'2vmin',sm:'15px', '&:hover':{color:'white'}}, color: 'black', borderRight:'1px solid #000000', marginRight:{xs:'1vmin',sm:'10px'} }}>Stores & Events</Typography>
+          <Typography variant="p" sx={{  paddingRight:{xs:'2vmin',sm:'15px', '&:hover':{color:'white'}},cursor:'pointer', color: 'black', borderRight:'1px solid #000000', marginRight:{xs:'1vmin',sm:'10px'} }} onClick={()=>navigate('/store')} >Stores & Events</Typography>
          
         </Grid>
         <Grid sx={{ display: 'flex', alignItems: 'center' }}>
           <Icon style={{padding:'4px 0px', marginRight:'3px'}} icon="fluent-mdl2:gift-card" color="#000000" width="20" height="20" />
-          <Typography variant="p" sx={{  paddingRight:{xs:'2vmin',sm:'15px'}, color: 'black', borderRight:'1px solid #000000', marginRight:{xs:'1vmin',sm:'10px','&:hover':{color:'white'} } }}>Gift Card</Typography>
+          <Typography variant="p" sx={{  paddingRight:{xs:'2vmin',sm:'15px'}, color: 'black',cursor:'pointer', borderRight:'1px solid #000000', marginRight:{xs:'1vmin',sm:'10px','&:hover':{color:'white'} } }}>Gift Card</Typography>
         </Grid>
         <Grid sx={{ display: 'flex', alignItems: 'center', marginRight:{md:'15%',xl:'20%'} }}>
           <Icon style={{padding:'4px 0px', marginRight:'3px'}} icon="formkit:help" color="#000000" width="15" height="15" />
-          <Typography variant="p" sx={{  paddingRight:{xs:'0px',sm:'15px'}, color: 'black','&:hover':{color:'white'} }}>Help</Typography>
+          <Typography variant="p" sx={{  paddingRight:{xs:'0px',sm:'15px'},cursor:'pointer', color: 'black','&:hover':{color:'white'} }}>Help</Typography>
         </Grid>
       </Grid>
 

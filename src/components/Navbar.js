@@ -93,7 +93,7 @@ const Navbar = () => {
     return (
         <>
 
-            <AppBar sx={{ backgroundColor: 'white', marginTop: '30px', }}>
+            <AppBar sx={{ backgroundColor: 'white', marginTop: '29px', }}>
                 <Grid container sx={{ justifyContent: 'center', }} >
                     <Grid container sx={{ width: { lg: '70%', xl: '65%' }, alignItems: 'center', display: 'flex' }} >
                         <Grid sx={{ marginRight: { xs: '5px', sm: '10px' }, marginLeft: { xs: '5px', sm: '10px' }, display: { xs: 'block', md: 'none', color: 'black' } }}>

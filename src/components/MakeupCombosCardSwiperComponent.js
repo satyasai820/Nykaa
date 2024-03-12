@@ -1,4 +1,6 @@
 import React from "react";
+
+import { Pagination, Navigation } from 'swiper/modules';
 import { Grid, Typography, Card, CardMedia, CardContent } from "@mui/material";
 import { Icon } from "@iconify/react";
 
@@ -12,38 +14,34 @@ import 'swiper/css/navigation';
 // import './styles.css';
 
 // import required modules
-import { Pagination, Navigation } from 'swiper/modules';
 
-const MakeupAtNykaaComponent = () => {
+const MakeupCombosCardSwiperComponent = () => {
 
-    const cardData = [{ img: 'https://images-static.nykaa.com/media/catalog/product/3/6/36d4d4fLOVAD00000243_1.jpg', name: 'L`Oreal Paris Hyaluron Moisture ' }, { img: 'https://images-static.nykaa.com/media/catalog/product/8/f/8f66377NUDES00000516_01.jpg', name: 'Maybelline New York Superstay Vinyl Ink' }, { img: 'https://images-static.nykaa.com/media/catalog/product/5/3/538f5dd843004110760_1.jpg', name: 'BBLUNT Hot Shot Heat Protection Hair  ' }, { img: 'https://images-static.nykaa.com/media/catalog/product/9/5/95c40c70754523804736_7.jpg', name: 'L`Oreal Paris Hyaluron Moisture ' }, { img: 'https://images-static.nykaa.com/media/catalog/product/f/c/fc55c7c5060586635626_1.jpg', name: 'L`Oreal Paris Hyaluron Moisture' }, { img: 'https://images-static.nykaa.com/media/catalog/product/e/6/e6e506381555433123_1.jpg', name: 'L`Oreal Paris Hyaluron Moisture' }, { img: 'https://images-static.nykaa.com/media/catalog/product/2/1/21c31f5BLUEH00000906_1.jpg', name: 'BBLUNT Hot Shot Heat Protection Hair  ' }, { img: 'https://images-static.nykaa.com/media/catalog/product/b/6/b6644f28906153190082_1.jpg', name: 'L`Oreal Paris Hyaluron Moisture' }, { img: 'https://images-static.nykaa.com/media/catalog/product/7/1/710f50b8904417309911_1.jpg', name: 'L`Oreal Paris Hyaluron Moisture ' }, { img: 'https://images-static.nykaa.com/media/catalog/product/5/6/56a344d5901905013452_1.jpg', name: 'Ikonic Professional Glam Straightner ' }, { img: 'https://images-static.nykaa.com/media/catalog/product/2/1/2140e9d8809546844282_1.jpg', name: 'L`Oreal Paris Hyaluron Moisture' }, { img: 'https://images-static.nykaa.com/media/catalog/product/0/2/02436798906121461336_1New.jpg', name: 'BBLUNT Hot Shot Heat Protection Hair  ' },]
+    const cardData = [{ img: 'https://images-static.nykaa.com/media/catalog/product/1/e/1eaafd38908012952879_1.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/9/9/99cc84e8610769_1.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/f/9/f9f915eSWIAC00001594_01.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/0/8/08329e3RENEE00000450_1.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/7/4/7439656LOVEE00000117_1a.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/0/d/0d7ef2eINSIG00000668_01n.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/a/b/ab69268combo_1.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/5/4/54dc3124186962434890_1.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/2/a/2aeee26LOVAD00000005_1.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/b/c/bc11ca6REVLO00000133.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/e/9/e91d6d7LAGIR00000008_1.jpg', name: 'Revlon Kajal & Lipstick Combo' }, { img: 'https://images-static.nykaa.com/media/catalog/product/a/f/af321bc746935569952_1w.jpg', name: 'Revlon Kajal & Lipstick Combo' },]
 
     return (
         <>
-            <Grid container sx={{ justifyContent: 'center', backgroundColor: 'white', paddingTop: '50px' }}>
+            <Grid container sx={{ justifyContent: 'center', backgroundColor: 'white', }}>
                 <Grid sx={{ width: { xs: '95%', sm: '90%', xl: '85%' } }}>
                     <Grid sx={{ marginLeft: { xs: '2px', sm: '30px' }, paddingBottom: '10px' }}>
-                        <Typography variant="h1" sx={{ fontSize: { xs: '15px', sm: '20px' } }}>New At Nykaa</Typography>
-                        <Typography variant="p" sx={{ fontSize: { xs: '12px', sm: '15px' } }}>Exciting & New Launches</Typography>
+                        <Typography variant="h1" sx={{ fontSize: { xs: '15px', sm: '20px' } }}>Crackling Combos</Typography>
                         <Grid sx={{ display: 'flex', alignItems: 'center' }}>
                             <Typography variant="p" sx={{ border: '1px solid #E80071', padding: '5px  10px', borderRadius: '20px', marginLeft: { sm: '40px' }, marginTop: '5px', color: '#E80071', }}>All</Typography>
                             <Typography variant="p" sx={{ border: '1px solid grey', padding: '5px  10px', borderRadius: '20px', marginLeft: '10px', marginTop: '5px' }}>Lips</Typography>
-                            <Typography variant="p" sx={{ border: '1px solid grey', padding: '5px  10px', borderRadius: '20px', marginLeft: '10px', marginTop: '5px' }}>Face</Typography>
-                            <Typography variant="p" sx={{ border: '1px solid grey', padding: '5px  10px', borderRadius: '20px', marginLeft: '10px', marginTop: '5px' }}>Eyes</Typography>
                             <Typography variant="p" sx={{ border: '1px solid grey', padding: '5px  10px', borderRadius: '20px', marginLeft: '10px', marginTop: '5px' }}>Tools & Brushes</Typography>
+                            <Typography variant="p" sx={{ border: '1px solid grey', padding: '5px  10px', borderRadius: '20px', marginLeft: '10px', marginTop: '5px' }}>Eyes</Typography>
 
                         </Grid>
 
                     </Grid>
-                    <Grid  >
 
-
+                    <Grid >
                         <Swiper
                             spaceBetween={10}
                             slidesPerView={8}
                             navigation={true}
                             modules={[Pagination, Navigation]}
-                            className="makeupCardSwiper"
+                            className="comboSwiper"
                             breakpoints={{
 
 
@@ -63,7 +61,7 @@ const MakeupAtNykaaComponent = () => {
 
                                 },
                                 320: {
-                                    slidesPerView: 2,
+                                    slidesPerView: 2.5,
 
 
                                 },
@@ -76,7 +74,7 @@ const MakeupAtNykaaComponent = () => {
 
                                     <SwiperSlide>
 
-                                        <Card sx={{ maxWidth: 160, boxShadow: 'none', textAlign: 'start', }}>
+                                        <Card sx={{ maxWidth: 160, boxShadow: 'none', textAlign: 'start' }}>
                                             <CardMedia
                                                 sx={{
                                                     position: 'relative',
@@ -111,11 +109,17 @@ const MakeupAtNykaaComponent = () => {
 
 
                     </Grid>
-                </Grid>
 
+                </Grid>
+                <Grid sx={{ width: { xs: '95%', sm: '90%' } }}>
+                    <Grid sx={{ textAlign: 'center', marginTop: { xs: '10px', sm: '20px' } }}>
+                        <img style={{ maxWidth: '100%', height: 'auto' }} src="https://images-static.nykaa.com/uploads/49e43a50-37b5-405a-be2d-ab90055115ec.jpg?tr=w-1200,cm-pad_resize" alt="" />
+                    </Grid>
+                </Grid>
             </Grid>
+
         </>
     );
 }
 
-export default MakeupAtNykaaComponent;
+export default MakeupCombosCardSwiperComponent;

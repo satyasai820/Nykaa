@@ -352,3 +352,26 @@ body {
     height: 310px;
   }
 }
+
+
+.shoplookSwiper{
+  width: 100%;
+  height: 100%;
+  margin: 20px auto;
+  --swiper-navigation-size: '15px',
+}
+
+.GuideSwiper{
+  width: 100%;
+  height: auto;
+  margin:'20px auto';
+  --swiper-navigation-size: '15px',
+
+}
+
+.comboSwiper{
+  width: 100%;
+  height: auto;
+  margin:'20px auto';
+  --swiper-navigation-size: '15px',
+}

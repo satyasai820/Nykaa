@@ -199,7 +199,7 @@ const Footer = () => {
                                     <Icon icon="ic:round-facebook" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
                                     <Icon icon="mdi:youtube" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
                                     <Icon icon="ri:twitter-fill" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
-                                    <Icon icon="ri:instagram-fill" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
+                                    <Icon icon="mdi:pinterest" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
                                 </Grid>
 
 

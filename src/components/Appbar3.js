@@ -73,7 +73,6 @@ function a11yProps(index) {
 
   return (
     <>
-    {/* <AppBar> */}
     <Box sx={{backgroundColor: 'white', marginBottom:'5px'}}>
     <Box sx={{ width:{md:'100%',lg:'65%'} , alignItems:'center',marginTop:{md:'95px'}, display:{xs:'none', md:'block'},  backgroundColor:'white',margin:'auto', }} onMouseLeave={() => handleTabLeave(-1)}>
       <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
@@ -134,7 +133,6 @@ function a11yProps(index) {
       </CustomTabPanel>
     </Box>
     </Box>
-    {/* </AppBar> */}
     </>
     
   );
