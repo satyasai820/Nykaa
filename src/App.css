@@ -375,3 +375,17 @@ body {
   margin:'20px auto';
   --swiper-navigation-size: '15px',
 }
+
+
+/* .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  font-size: 12px;
+  height: 'auto';
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 30px;
+} */
