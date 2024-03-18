@@ -13,7 +13,7 @@ import { useNavigate } from "react-router-dom";
 import { signOut } from "firebase/auth";
 import { auth } from "../firebase";
 import Modal from '@mui/material/Modal';
-import {googleAccount} from '../pages/SignUp'
+import { googleAccount } from '../pages/SignUp'
 
 
 
@@ -22,7 +22,7 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 250,
+    width: 200,
     bgcolor: 'background.paper',
     boxShadow: 24,
 };
@@ -84,22 +84,22 @@ const Navbar = () => {
     }
 
 
-    const handleOpenForm = () =>{
+    const handleOpenForm = () => {
         setOpenModalForm(true);
         setAnchorEl(null);
-    } 
+    }
     const handleCloseForm = () => setOpenModalForm(false);
 
     return (
         <>
 
-            <AppBar sx={{ backgroundColor: 'white', marginTop: '30px', }}>
+            <AppBar sx={{ backgroundColor: 'white', marginTop: '29px', }}>
                 <Grid container sx={{ justifyContent: 'center', }} >
                     <Grid container sx={{ width: { lg: '70%', xl: '65%' }, alignItems: 'center', display: 'flex' }} >
                         <Grid sx={{ marginRight: { xs: '5px', sm: '10px' }, marginLeft: { xs: '5px', sm: '10px' }, display: { xs: 'block', md: 'none', color: 'black' } }}>
                             <Icon onClick={handleOpen} icon="el:lines" width="20" height="20" />
                         </Grid>
-                        <Grid sx={{ cursor: 'pointer',}} onClick= {() => navigate('/')} >
+                        <Grid sx={{ cursor: 'pointer', }} onClick={() => navigate('/')} >
                             <img src="https://cdn.iconscout.com/icon/free/png-256/free-nykaa-3384872-2822953.png?f=webp" alt="logo" width={60} height={60} />
                         </Grid>
                         <Grid sx={{ marginLeft: '20px', display: { xs: 'none', md: 'block' } }}>
@@ -145,7 +145,7 @@ const Navbar = () => {
 
 
                                         <Grid sx={{ display: 'flex', alignItems: 'center', }}>
-                                            <Icon onClick={handleOpenForm} icon="ant-design:user-outlined" width="20" height="20" style={{ color: 'black', marginRight: '5px' }} />
+                                            <Icon onClick={handleOpenForm} icon="ant-design:user-outlined" width="20" height="20" style={{ color: 'black', marginRight: '5px', cursor:'pointer' }} />
 
                                             <Modal
                                                 open={openModalForm}
@@ -156,12 +156,11 @@ const Navbar = () => {
                                                 <Box sx={style}>
 
                                                     <Grid sx={{ textAlign: 'center', margin: '5px', }}>
-                                                        <Typography sx={{ fontSize: '16px', fontWeight: 550, marginBottom: '20px', marginTop: '20px' }}>
-                                                            Are you sure you want to Log out.?
-                                                        </Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', fontWeight: 'bold', color: '#E80071', cursor: 'pointer' }} onClick={handleLogOut}>Logout</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', fontWeight: 'bold', color: '#E80071', cursor: 'pointer' }}>Logout from all devices</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', fontWeight: 'bold', color: '#E80071', marginBottom: '10px', cursor: 'pointer' }} onClick={handleCloseForm}>Cancle</Typography>
+                                                        <Typography sx={{ padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Orders</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }} onClick={(()=>{navigate('/profile')})} >Profile</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Wallet</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Wishlist</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }} onClick={handleLogOut}>Logout</Typography>
                                                     </Grid>
 
                                                 </Box>
@@ -218,7 +217,29 @@ const Navbar = () => {
                                     <Grid sx={{ display: 'flex', alignItems: 'center', }}>
                                         <Icon onClick={handleOpenForm} icon="ant-design:user-outlined" width="20" height="20" style={{ color: 'black', marginRight: '5px' }} />
 
+
+
                                         <Modal
+                                                open={openModalForm}
+                                                onClose={handleCloseForm}
+                                                aria-labelledby="modal-modal-title"
+                                                aria-describedby="modal-modal-description"
+                                            >
+                                                <Box sx={style}>
+
+                                                    <Grid sx={{ textAlign: 'center', margin: '5px', }}>
+                                                        <Typography sx={{ padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Orders</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }} onClick={(()=>{navigate('/profile')})} >Profile</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Wallet</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Wishlist</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }} onClick={handleLogOut}>Logout</Typography>
+                                                    </Grid>
+
+                                                </Box>
+                                            </Modal>
+
+
+                                        {/* <Modal
                                             open={openModalForm}
                                             onClose={handleCloseForm}
                                             aria-labelledby="modal-modal-title"
@@ -236,7 +257,7 @@ const Navbar = () => {
                                                 </Grid>
 
                                             </Box>
-                                        </Modal>
+                                        </Modal> */}
 
                                         <Typography sx={{ color: 'black', fontSize: '12px', marginRight: '10px' }}>{Name}</Typography>
 
@@ -354,12 +375,35 @@ const Navbar = () => {
                 )}
 
             </Drawer>
+
+
+
+
+            {/* <Modal
+                open={openModalForm}
+                onClose={handleCloseForm}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+            >
+                <Box sx={style}>
+
+                    <Grid sx={{ textAlign: 'center', margin: '5px', }}>
+                        <Typography sx={{ fontSize: '16px', fontWeight: 550, marginBottom: '20px', marginTop: '20px' }}>
+                            Are you sure you want to Log out.?
+                        </Typography>
+                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', fontWeight: 'bold', color: '#E80071', cursor: 'pointer' }} onClick={handleLogOut}>Logout</Typography>
+                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', fontWeight: 'bold', color: '#E80071', cursor: 'pointer' }}>Logout from all devices</Typography>
+                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', fontWeight: 'bold', color: '#E80071', marginBottom: '10px', cursor: 'pointer' }} onClick={handleCloseForm}>Cancle</Typography>
+                    </Grid>
+
+                </Box>
+            </Modal> */}
+
         </>
     );
 }
 
 export default Navbar;
-
 
 
 

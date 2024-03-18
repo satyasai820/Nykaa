@@ -61,8 +61,8 @@ const Footer = () => {
                     </Grid>
                 </Grid>
                 <Grid sx={{ backgroundColor: '#8C8D94', width: '100%', margin: 'auto' }}>
-                    <Grid sx={{ width: { xs: '100%', md: '80%', lg: '60%' }, marginBottom: { xs: '30px' }, display: { sm: 'flex' }, margin: 'auto', marginTop: '30px' }}>
-                        <Grid item xs={12} sm={6} sx={{ textAlign: { xs: 'center', sm: 'start' } }}>
+                    <Grid sx={{ width: { xs: '100%', md: '80%', lg: '60%' }, marginBottom: { xs: '30px' }, display: { sm: 'flex' }, margin: 'auto', marginTop: '30px',}}>
+                        <Grid item xs={12} sm={6} sx={{ textAlign: { xs: 'center', sm: 'start' }, marginLeft:{sm:'10px', md:'0px'} }}>
                             <Grid sx={{}}>
                                 <img src="https://www.cointab.net/wp-content/uploads/2022/08/Untitled-design-16-1.png" width='65' height='50' alt="" />
 
@@ -199,7 +199,7 @@ const Footer = () => {
                                     <Icon icon="ic:round-facebook" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
                                     <Icon icon="mdi:youtube" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
                                     <Icon icon="ri:twitter-fill" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
-                                    <Icon icon="ri:instagram-fill" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
+                                    <Icon icon="mdi:pinterest" width="15" height="15" style={{ color: 'white', backgroundColor: 'black', borderRadius: '100%', padding: '2', marginLeft: '10px' }} />
                                 </Grid>
 
 

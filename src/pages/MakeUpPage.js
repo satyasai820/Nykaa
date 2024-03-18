@@ -18,6 +18,13 @@ import MakeupAtNykaaComponent from "../components/MakeupAtNykaaComponent";
 import MakeupAceSwiperComponent from "../components/MakeupAceSwiperComponent";
 import MakeupBudgetComponent from "../components/MakeupBudgetComponent";
 import MakeupGloballyCardSwiperComponent from "../components/MakeupGloballyCardSwiperComponent";
+import MakeupMiniSwiperComponent from "../components/MakeupMiniSwiperComponent";
+import MakeupShopTheLookSwiperComponent from "../components/MakeupShopTheLookSwiperComponent";
+import MakeupHiddenCardComponent from "../components/MakeupHiddenCardComponent";
+import MakeupGuidesSwiperComponent from "../components/MakeupGuidesSwiperComponent";
+import SwatchSwiperComponent from "../components/SwatchSwiperComponent";
+import MakeupCombosCardSwiperComponent from "../components/MakeupCombosCardSwiperComponent";
+import Footer from "../components/Footer";
 
 
 const MakeUpPage = () => {
@@ -41,6 +48,13 @@ const MakeUpPage = () => {
         <MakeupAceSwiperComponent />
         <MakeupBudgetComponent />
         <MakeupGloballyCardSwiperComponent />
+        <MakeupMiniSwiperComponent />
+        <MakeupShopTheLookSwiperComponent />
+        <MakeupHiddenCardComponent />
+        <MakeupGuidesSwiperComponent />
+        <SwatchSwiperComponent display='none' />
+        <MakeupCombosCardSwiperComponent />
+        <Footer />
         </>
     );
 }
