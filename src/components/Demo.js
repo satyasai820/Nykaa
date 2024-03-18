@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Typography } from "@mui/material";
 import ProfileTabOneComponent from "./ProfileTabOneComponent";
 
@@ -9,6 +9,9 @@ const Demo = () => {
 
     const [displayData, setDisplayData] = useState(null);
 
+   useEffect(()=> (
+        handleData()
+    ),[]);
 
     const handleData = () => {
         console.log('yeah clicked')
