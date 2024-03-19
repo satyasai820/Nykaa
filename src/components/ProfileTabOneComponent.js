@@ -5,6 +5,20 @@ import React from "react";
 import { Icon } from "@iconify/react";
 
 const ProfileTabOneComponent = () => {
+    
+    const Name = localStorage.getItem('displayName');
+    console.log('Name in tabs one component', Name);
+    const Email = localStorage.getItem('email');
+    console.log('this is email-----', Email)
+
+    const formatEmail = (email) => {
+        if (email.length > 12) {
+          return email.slice(0, 12) + '...';
+        } else {
+          return email;
+        }
+      };
+
     return (
         <>
             <Grid container sx={{ width: '100%', justifyContent: 'center', }} >
@@ -15,12 +29,12 @@ const ProfileTabOneComponent = () => {
 
                         </Grid>
                         <Grid sx={{ margin: '40px 0px 0px 15px' }}>
-                            <Typography sx={{ fontWeight: 'bold', fontSize:{xs:'11px',sm:'16px'} }}>Satya Sai</Typography>
-                            <Typography sx={{ fontSize:{xs:'10px',sm:'13px'} , color: 'grey', fontWeight: 550 }}>Email: <span style={{ fontWeight: 300 }} >satyaroyals</span></Typography>
+                            <Typography sx={{ fontWeight: 'bold', fontSize:{xs:'11px',sm:'16px'} }}>{Name}</Typography>
+                            <Typography sx={{ fontSize:{xs:'10px',sm:'13px'} , color: 'grey', fontWeight: 550 }}>Email: <span style={{ fontWeight: 300,  }} >{formatEmail(Email)}</span></Typography>
                             <Typography sx={{ fontSize:{xs:'10px',sm:'13px'} , color: 'grey', fontWeight: 550 }}>Date of Birth: <span style={{ fontWeight: 300 }} >dd/mm/yyyy</span></Typography>
                         </Grid>
                         <Grid sx={{ marginLeft: 'auto' }}>
-                            <Typography sx={{ fontSize: '11px', color: '#000000', textAlign: 'end', padding: '10px 5px', display:{xs:'none', sm:'block'} }}> <Icon icon="fluent:edit-48-regular" width="12" height="12" /> Edit</Typography>
+                            <Typography sx={{ fontSize: '11px', color: '#000000', textAlign: 'end', padding: '10px 10px', display:{xs:'none', sm:'block'} }}> <Icon icon="fluent:edit-48-regular" width="12" height="12" /> Edit</Typography>
                             <Typography sx={{ fontSize: '11px', color: 'green', padding: '30px 8px 0px 0px',display:{xs:'none',sm:'block'} }}>Verified</Typography>
                         </Grid>
 
