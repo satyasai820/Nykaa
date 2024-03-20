@@ -14,6 +14,9 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation } from 'swiper/modules';
 
 const FaceFirstComponent = () => {
+
+    const imgUrl = [{img:'https://images-static.nykaa.com/uploads/f8add4b6-47e0-4d76-8d86-457436b36852.jpg?tr=cm-pad_resize,w-150'},{img:'https://images-static.nykaa.com/uploads/435935cb-0005-4172-aba3-308d87e28729.jpg?tr=cm-pad_resize,w-150'},{img:'https://images-static.nykaa.com/uploads/853f46eb-78c4-4c4c-9331-a942a595998e.jpg?tr=cm-pad_resize,w-150'},{img:'https://images-static.nykaa.com/uploads/d83edcb5-d8aa-4149-8458-3e450048c08e.jpg?tr=cm-pad_resize,w-150'},{img:'https://images-static.nykaa.com/uploads/3bdf6f88-a721-4874-9313-02999a416bd7.jpg?tr=cm-pad_resize,w-150'},]
+
     return (
         <>
             <Grid container sx={{  justifyContent: 'center', marginTop: { xs: '160px', sm: '120px', md: '20px' } }}>
@@ -50,6 +53,18 @@ const FaceFirstComponent = () => {
                     </Grid>
                     <Grid sx={{display:{xs:'block', sm:'none'}}}>
                     <img style={{maxWidth:'100%', height:'auto'}} src='https://images-static.nykaa.com/uploads/3e8dfec3-16c2-4a71-a192-3ac1ff280a1b.jpg?tr=cm-pad_resize,w-1200' alt="1" />
+                    </Grid>
+                    <Grid sx={{marginTop:'20px', backgroundColor:'#FFFFFF'}}>
+                        <Typography sx={{fontSize:{sm:'15px', fontWeight:550,padding:'10px 0px'}}}>Shop By Benefit </Typography>
+                        <Grid sx={{display:'flex'}}>
+                        {imgUrl.map((item)=>(
+                            <Grid sx={{marginRight:'10px'}}>
+                                
+                              <img style={{maxWidth:'100%', height:'auto', borderRadius:'8px'}} src={item.img} alt="" />
+                              </Grid>
+                        ))}
+                        </Grid>
+                      
                     </Grid>
 
                 </Grid>

@@ -402,3 +402,19 @@ body {
   background-color: #E80071; /* No quotes around color name */
 }
 
+/* .GridContent {
+  display: none;
+}
+
+.Container:hover .GridContent {
+  display: block;
+} */
+
+
+.gridContent {
+  display: none;
+}
+
+.gridContainer:hover .gridContent {
+  display: block;
+}
