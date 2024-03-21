@@ -7,6 +7,7 @@ import MakeUpPage from './pages/MakeUpPage';
 import StorePage from './pages/StorePage';
 import Profile from './pages/Profile';
 import FacePage from './pages/FacePage';
+import DetailsPage from './pages/DetailsPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
     <Route path='/store' element={ <StorePage />} />
     <Route path ='/profile' element={ <Profile />} />
     <Route path='/face/:id' element={ <FacePage />} />
+    <Route path='/Details' element={ <DetailsPage />} />
   
    </Routes>
    </>

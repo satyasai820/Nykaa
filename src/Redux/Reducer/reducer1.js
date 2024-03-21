@@ -7,6 +7,7 @@ const initialState = {
 const Reducer1 = (state = initialState, action) => {
     switch (action.type){
         case 'GET_DATA':
+            console.log("This is get data reducer")
             return{
                 ...state,
                 data:action.payload,

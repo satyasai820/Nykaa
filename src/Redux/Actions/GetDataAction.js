@@ -1,7 +1,8 @@
+import { GET_DATA } from "./ActionTypes"
 
-const Getdata = (data) => {
+export const Getdata = (data) => {
     return{
-        type:'GET_DATA',
-        payload:'data',
+        type: GET_DATA,
+        payload:data,
     }
 }

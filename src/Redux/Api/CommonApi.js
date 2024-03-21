@@ -1,3 +1,3 @@
 
 
-export const BaseUrl = 'https://nykaawebsite-default-rtdb.firebaseio.com/'
+export const BaseUrl = 'https://nykaawebsite-default-rtdb.firebaseio.com'
