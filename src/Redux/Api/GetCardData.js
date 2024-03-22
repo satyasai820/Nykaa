@@ -4,7 +4,7 @@ import { BaseUrl } from "./CommonApi";
 
 export const GetCradsData = async () => {
     try{
-        const response = await axios.get(`${BaseUrl}/cards.json`)
+        const response = await axios.get(`${BaseUrl}/card.json`)
         console.log("This is Data from the FireBase ----->", response);
         const jsonData = response.data;
         if(jsonData === null) {

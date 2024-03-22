@@ -53,10 +53,17 @@ const FaceSecondComponent = ( {Getdata, data}) => {
     const gettingCards = data;
 
     const CardsData = gettingCards.filter( (item)=> item.status === router);
-    
-    const handleCardClick =  (aboutcard) => {
-        const aboutcarddataString = JSON.stringify(aboutcard);
-      localStorage.setItem("aboutcarddataString", aboutcarddataString)
+    console.log("This is card data after filter >>>>", CardsData);
+
+
+    const handleCardClick =  (productImages) => {
+        console.log("this is inner images lenght in function----->",productImages.length);
+        const productImgs = JSON.stringify(productImages);
+        console.log("this is inner images lenght in function after converting----->",productImgs.length);
+        localStorage.setItem('productImages',productImgs);
+        console.log("this is the length of local store",productImgs.length)
+        
+    //   localStorage.setItem("aboutcarddataString", aboutcarddataString)
       navigate('/Details')
     };
     
@@ -93,14 +100,14 @@ const FaceSecondComponent = ( {Getdata, data}) => {
 
                                 {CardsData.map((item) => (
                                     <>
-                                        <Grid item xs={12} sm={6} md={4} lg={4} sx={{ width: { sm: '95%' }, marginBottom: '10px', }} onClick={()=>{handleCardClick(item.aboutcard)}}>
-
+                                        <Grid item xs={12} sm={6} md={4} lg={4} sx={{ width: { sm: '95%' }, marginBottom: '10px', }} onClick={()=>{handleCardClick(item.innerImgs)}}>
+                                            
                                             <Card sx={{ maxWidth: 205, margin: 'auto', boxShadow: 'none' }} onMouseLeave={() => handleChangeClose()}>
                                                 <CardActionArea onMouseEnter={() => handleChage(item.c)} >
                                                     <CardMedia
                                                         component="img"
                                                         height="auto"
-                                                        image={item.imgurl}
+                                                        image={item.img}
                                                         alt="green iguana"
 
                                                     />
@@ -128,22 +135,23 @@ const FaceSecondComponent = ( {Getdata, data}) => {
 
                                                         ) :
                                                             (<Typography sx={{ fontSize: '10px', color: '#001325A3', textAlign: 'center', marginTop: '50px' }} >3 shades </Typography>)}
+                                                            
                                                     </CardContent>
                                                 </CardActionArea>
                                             </Card>
 
-
-
+                                            
+                                        
+                                                
                                         </Grid>
                                     </>
+                                   
                                 ))}
 
 
                                 <Grid container sx={{ justifyContent: 'center', margin: '10px 0px' }}>
                                     <Pagination count={5} size="small" sx={{ '& .MuiPaginationItem-root': { color: '#E80071' }, }} />
-                                    {/* {gotIt.map((item) => (
-                                        <Typography>{item.subtitle}</Typography>
-                                    ))} */}
+                                   
                                 </Grid>
 
                             </Grid>
