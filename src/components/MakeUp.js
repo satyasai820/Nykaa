@@ -1,9 +1,14 @@
 import { Typography, Grid } from "@mui/material";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const MakeUp = () => {
 
-    const faceData = [{ name: 'Face Primer' }, { name: 'Concealer' }, { name: 'Foundation' }, { name: 'Compact' }, { name: 'Loose Powder' }, { name: 'Tinted Moisturizer' }, { name: 'Blush' }, { name: 'Bronzer' }, { name: 'BB & CC Cream' }, { name: 'Highlighters' }, { name: 'Setting Spray' }, { name: 'Makeup Remover' }, { name: 'Sindoor' }]
+    const navigate = useNavigate();
+
+
+
+    const faceData = [  { name: 'Compact' }, { name: 'Loose Powder' }, { name: 'Tinted Moisturizer' }, { name: 'Blush' }, { name: 'Bronzer' }, { name: 'BB & CC Cream' }, { name: 'Highlighters' }, { name: 'Setting Spray' }, { name: 'Makeup Remover' }, { name: 'Sindoor' }]
 
     const eyesData = [{ name: 'Kajal' }, { name: 'Eyeliner' }, { name: 'Mascara' }, { name: 'Eye Shadow' }, { name: 'Eye Brow Enhancers' }, { name: 'Eye Primer' }, { name: 'Eye Makeup Remover' }, { name: 'Under Eye Concealer' }, { name: 'Contact Leanses' }]
 
@@ -18,8 +23,11 @@ const MakeUp = () => {
     return (
         <>
             <Grid container >
-                <Grid item md={2}  sx={{padding:'0px 15px'}}>
-                    <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }} >Face</Typography>
+                <Grid item md={2}  sx={{padding:'0px 15px', cursor:'pointer'}}>
+                    <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', cursor:'pointer' }}  >Face</Typography>
+                        <Typography onClick={()=> navigate('/face/faceprimer')} sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>Face Primer</Typography>
+                        <Typography onClick={()=> navigate('/face/concealer')} sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>Concealer</Typography>
+                        <Typography onClick={()=> navigate('/face/foundation')} sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>Foundation</Typography>
                     {faceData.map((item) => (
                         <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}

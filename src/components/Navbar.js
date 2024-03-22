@@ -25,6 +25,7 @@ const style = {
     width: 200,
     bgcolor: 'background.paper',
     boxShadow: 24,
+    
 };
 
 
@@ -147,7 +148,7 @@ const Navbar = () => {
                                         <Grid sx={{ display: 'flex', alignItems: 'center', }}>
                                             <Icon onClick={handleOpenForm} icon="ant-design:user-outlined" width="20" height="20" style={{ color: 'black', marginRight: '5px', cursor:'pointer' }} />
 
-                                            <Modal
+                                            {/* <Modal
                                                 open={openModalForm}
                                                 onClose={handleCloseForm}
                                                 aria-labelledby="modal-modal-title"
@@ -155,8 +156,8 @@ const Navbar = () => {
                                             >
                                                 <Box sx={style}>
 
-                                                    <Grid sx={{ textAlign: 'center', margin: '5px', }}>
-                                                        <Typography sx={{ padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Orders</Typography>
+                                                    <Grid sx={{ textAlign: 'center', margin: '5px', alignItems:'center' }}>
+                                                        <Typography sx={{ padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>    <Icon style={{color:'red'}} icon='iconamoon:profile-circle-fill' width="15" height="15" />Orders</Typography>
                                                         <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }} onClick={(()=>{navigate('/profile')})} >Profile</Typography>
                                                         <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Wallet</Typography>
                                                         <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Wishlist</Typography>
@@ -164,7 +165,7 @@ const Navbar = () => {
                                                     </Grid>
 
                                                 </Box>
-                                            </Modal>
+                                            </Modal> */}
 
                                             <Typography sx={{ color: 'black', fontSize: '12px', marginRight: '15px' }}>{Name}</Typography>
 
@@ -227,12 +228,12 @@ const Navbar = () => {
                                             >
                                                 <Box sx={style}>
 
-                                                    <Grid sx={{ textAlign: 'center', margin: '5px', }}>
-                                                        <Typography sx={{ padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Orders</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }} onClick={(()=>{navigate('/profile')})} >Profile</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Wallet</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }}>Wishlist</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer' }} onClick={handleLogOut}>Logout</Typography>
+                                                    <Grid sx={{  padding: '5px'  }}>
+                                                        <Typography sx={{ padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center' }}>  <Icon style={{color:'#000000', marginRight:'5px'}} icon='fontisto:truck' width="15" height="15" />Orders</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center'   }} onClick={(()=>{navigate('/profile')})} > <Icon style={{color:'#000000', marginRight:'5px'}} icon='iconamoon:profile-circle-fill' width="15" height="15" />Profile</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center'   }}> <Icon style={{color:'#000000', marginRight:'5px'}} icon='ion:wallet-outline' width="15" height="15" />Wallet</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center'   }}> <Icon style={{color:'#000000', marginRight:'5px'}} icon='icon-park-solid:like' width="15" height="15" />Wishlist</Typography>
+                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center'   }} onClick={handleLogOut}> <Icon style={{color:'#000000', marginRight:'5px'}} icon='icons8:shutdown' width="15" height="15" />Logout</Typography>
                                                     </Grid>
 
                                                 </Box>
@@ -379,25 +380,7 @@ const Navbar = () => {
 
 
 
-            {/* <Modal
-                open={openModalForm}
-                onClose={handleCloseForm}
-                aria-labelledby="modal-modal-title"
-                aria-describedby="modal-modal-description"
-            >
-                <Box sx={style}>
-
-                    <Grid sx={{ textAlign: 'center', margin: '5px', }}>
-                        <Typography sx={{ fontSize: '16px', fontWeight: 550, marginBottom: '20px', marginTop: '20px' }}>
-                            Are you sure you want to Log out.?
-                        </Typography>
-                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', fontWeight: 'bold', color: '#E80071', cursor: 'pointer' }} onClick={handleLogOut}>Logout</Typography>
-                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', fontWeight: 'bold', color: '#E80071', cursor: 'pointer' }}>Logout from all devices</Typography>
-                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', fontWeight: 'bold', color: '#E80071', marginBottom: '10px', cursor: 'pointer' }} onClick={handleCloseForm}>Cancle</Typography>
-                    </Grid>
-
-                </Box>
-            </Modal> */}
+          
 
         </>
     );

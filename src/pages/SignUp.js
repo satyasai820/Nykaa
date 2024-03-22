@@ -17,6 +17,7 @@ export const googleAccount = (navigate) => {
             const token = result.user.accessToken;
             localStorage.setItem('accessToken', token);
             console.log('this is token google token man ', token);
+            localStorage.setItem('email',result.user.email);
             const Name = result.user.displayName;
             localStorage.setItem('displayName', Name)
             console.log("this is the name by google", Name);
@@ -57,7 +58,7 @@ const SignUp = () => {
     const handleButtonClick = async (e) => {
         e.preventDefault();
 
-        if (name === '' || email === '' || password === '') {
+        if (email === '' || password === '') {
             alert('Please fill the all detailes')
         } else {
 
@@ -73,7 +74,7 @@ const SignUp = () => {
                     });
                     console.log('this is the user', user);
                     const token = await user.getIdToken();
-
+                    localStorage.setItem('email',userCredential.user.email);
                     localStorage.setItem('accessToken', token)
                     console.log('this is sign in token', token);
                     localStorage.setItem('displayName', userCredential.user.displayName)
@@ -101,6 +102,7 @@ const SignUp = () => {
                     const user = userCredential.user;
                     const token = await user.getIdToken();
                     localStorage.setItem('accessToken', token);
+                    localStorage.setItem('email',userCredential.user.email);
                     const Name = userCredential.user.displayName;
                     localStorage.setItem('displayName', Name)
                     localStorage.getItem('displayName', Name);

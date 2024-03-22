@@ -389,3 +389,32 @@ body {
   box-sizing: border-box;
   padding: 30px;
 } */
+
+
+.faceSlider{
+  width: 100%;
+  height: auto;
+  margin:'20px auto';
+  --swiper-navigation-size: '15px',
+}
+
+.faceSlider .swiper-pagination-bullet {
+  background-color: #E80071; /* No quotes around color name */
+}
+
+/* .GridContent {
+  display: none;
+}
+
+.Container:hover .GridContent {
+  display: block;
+} */
+
+
+.gridContent {
+  display: none;
+}
+
+.gridContainer:hover .gridContent {
+  display: block;
+}
