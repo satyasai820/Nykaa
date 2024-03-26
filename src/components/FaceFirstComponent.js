@@ -112,6 +112,7 @@ const mapStateToProps = (state) => {
 }
 
 const  mapDispatchToProps = {
+   
     GetBanners,
 }
 
