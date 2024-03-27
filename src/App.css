@@ -397,3 +397,13 @@ body {
 .gridContainer:hover .gridContent {
   display: block;
 }
+
+
+.detailsSwiper {
+  width: 100%;
+  height: auto;
+  margin:'20px auto';
+  --swiper-navigation-size: '15px',
+}
+
+

@@ -5,6 +5,7 @@ import Appbar1 from "../components/Appbar1";
 import Navbar from "../components/Navbar";
 import Appbar3 from "../components/Appbar3";
 import DetailsSecondComponent from "../components/DetailsSecondComponent";
+import DetailsThirdComponent from "../components/DetailsThirdComponent";
 const DetailsPage = () => {
 
     // const productImages =JSON.parse(localStorage.getItem('productImages'));
@@ -32,6 +33,7 @@ const DetailsPage = () => {
         <Appbar3 />
         <DetailsBanner />
         <DetailsSecondComponent />
+        <DetailsThirdComponent />
         </>
     );
 }

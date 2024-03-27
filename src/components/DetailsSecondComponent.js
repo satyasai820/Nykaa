@@ -1,5 +1,5 @@
-import {  Grid, Typography } from "@mui/material";
-import React, {useState} from "react";
+import { Grid, Typography } from "@mui/material";
+import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import ReactImageMagnify from 'react-image-magnify';
 
@@ -7,20 +7,19 @@ const DetailsSecondComponent = () => {
 
     const cardsData = JSON.parse(localStorage.getItem('productImages'))
     console.log("this is product details imgs ----->", cardsData)
+    const firstImg = cardsData[0].img
+    console.log("first one ", firstImg)
 
-    const [largeImageSrc, setLargeImageSrc] = useState('https://images-static.nykaa.com/media/catalog/product/8/c/8c12fe48901030561924_1.jpg?tr=w-344,h-344,cm-pad_resize');
+    const [selectedImage, setSelectedImage] = useState(firstImg);
 
-    const handleImageClick = (src) => {
-        setLargeImageSrc(src);
-    };
+   
 
-    const smallImg = [
-        'https://images-static.nykaa.com/media/catalog/product/8/c/8c12fe48901030561924_2.jpg',
-        'https://images-static.nykaa.com/media/catalog/product/8/c/8c12fe48901030561924_1.jpg?tr=w-344,h-344,cm-pad_resize',
-       
-        
-    ];
+    const handleSetImg = (img) => {
+        console.log('this is the img that user clicked---->', img)
+        setSelectedImage(img);
+    }
 
+    
 
     const smallImages = [{ img: 'https://images-static.nykaa.com/media/icons/8901030561924_blurperfectprimer.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/lakme00000766_glowprimernew.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8901030725692_undercovergelprimer.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245715984_02ylight.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245715991_03plight.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245716011_05pmedium.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245716028_06ymedium.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245716080_12ytan.jpg?tr=w-50,h-50' }]
 
@@ -30,53 +29,48 @@ const DetailsSecondComponent = () => {
     return (
         <>
             <Grid container sx={{ justifyContent: 'center' }}>
-                <Grid sx={{ width: { xs: '95%', sm: '90%', md: '85%', lg: '70%' }, border: '2px solid red', marginTop: '30px' }}>
-                    <Grid container sx={{ width: '100%', display: 'flex', backgroundColor: '#FFFFFF' }}>
-                        <Grid sx={{ width: { xs: '100%', md: '35%' }, border: '2px solid black' }}>
-                            {/* <ReactImageMagnify {...{
-                        smallImage: {
-                            alt: 'Wristwatch by Ted Baker London',
-                            isFluidWidth: true,
-                            src: 'https://images-static.nykaa.com/media/catalog/product/8/c/8c12fe48901030561924_1.jpg?tr=w-344,h-344,cm-pad_resize',
-                        },
-                        largeImage: {
-                            src: 'https://images-static.nykaa.com/media/catalog/product/8/c/8c12fe48901030561924_1.jpg?tr=w-344,h-344,cm-pad_resize',
-                            width: 1900,
-                            height: 1800
-                        },
-                        isHintEnabled: true,
-                        shouldHideHintAfterFirstActivation: false
-                    }} /> */}
+                <Grid sx={{ width: { xs: '95%', sm: '90%', md: '85%', lg: '70%' }, marginTop: '30px' }}>
+                    <Grid container sx={{ width: '100%', display: 'flex', backgroundColor: '#FFFFFF', paddingTop:'20px' }}>
+                        <Grid sx={{ width: { xs: '100%', md: '35%' },display: 'flex' }}>
 
+                            
+                            <Grid sx={{ width: '15%', margin:{xs:'2vmin 0px 0px 10px', sm:'40px 0px 0px 10px'},  }}>
+                                {cardsData.map((item) => (
+                                    <>
+                                        <Grid sx={{ marginBottom: '10px', }} onClick={() => handleSetImg(item.img)} >
+                                            <img src={item.img} style={{ width: '40px', height: 'auto' , border:'1px solid lightgrey'}} />
 
-                            <div style={{ display: 'flex' }}>
-                                {smallImg.map((smallImage, index) => (
-                                    <img
-                                        key={index}
-                                        src={smallImg}
-                                        alt={`Small Image ${index + 1}`}
-                                        onClick={() => handleImageClick(smallImage)}
-                                        style={{ width: '100px', height: '100px', margin: '5px', cursor: 'pointer' }}
-                                    />
+                                        </Grid>
+                                    </>
                                 ))}
-                            </div>
-                            <ReactImageMagnify {...{
-                                smallImage: {
-                                    alt: 'Wristwatch by Ted Baker London',
-                                    isFluidWidth: true,
-                                    src: largeImageSrc,
-                                },
-                                largeImage: {
-                                    src: largeImageSrc,
-                                    width: 1900,
-                                    height: 1800
-                                },
-                                isHintEnabled: true,
-                                shouldHideHintAfterFirstActivation: false
-                            }} />
+                            </Grid>
+
+                            <Grid sx={{ width: '85%', }}>
+                                <ReactImageMagnify {...{
+                                    smallImage: {
+                                        alt: 'Wristwatch by Ted Baker London',
+                                        isFluidWidth: true,
+                                        src: selectedImage,
+                                    },
+                                    
+                                    largeImage: {
+                                        src: selectedImage,
+                                        width: 1900,
+                                        height: 1800,
+                                        
+                                    },
+                                    enlargedImageContainerDimensions: {
+                                        width: '220%', 
+                                        height: '165%',
+                                      
+                                    },
+                                    isHintEnabled: true,
+                                    shouldHideHintAfterFirstActivation: false
+                                }} />
+                            </Grid>
 
                         </Grid>
-                        <Grid container sx={{ width: { xs: '100%', md: '65%' }, border: '2px solid orange', }}>
+                        <Grid container sx={{ width: { xs: '100%', md: '65%' }, borderLeft:'1px solid lightgrey' }}>
                             <Grid sx={{ paddingLeft: { xs: '10px', sm: '15px' }, }}>
                                 <Typography sx={{ fontSize: '16px', color: '#001325', fontWeight: 500 }}>Maybelline New York Fit Me Matte+Poreless Liquid Foundation 16H Oil Control - 128 Warm Nude</Typography>
                                 <Typography sx={{ fontSize: '13px', marginBottom: '10px' }}>(30ml)</Typography>
@@ -169,11 +163,6 @@ const DetailsSecondComponent = () => {
                 </Grid>
 
             </Grid>
-            {/* {cardsData.map((item) => (
-                <>
-                <img src={item.img}  />
-                </>
-            ))} */}
         </>
     );
 }

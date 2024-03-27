@@ -70,16 +70,6 @@ const FaceFirstComponent = ({data, GetBanners}) => {
                             </SwiperSlide>
                                 </>
                             ))}
-                           
-                            {/* <SwiperSlide>
-                                <img src='https://images-static.nykaa.com/uploads/cf23df7f-7651-480f-9547-e98f5cd707b6.jpg?tr=cm-pad_resize,w-1200' alt="1" />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img src='https://images-static.nykaa.com/uploads/b37d8e0c-7366-414c-9276-35c5b4c2dbd2.jpg?tr=cm-pad_resize,w-1200' alt="1" />
-                            </SwiperSlide>
-                            <SwiperSlide>
-                                <img src='https://images-static.nykaa.com/uploads/3ea085c7-21b2-47e3-ba64-ecbbf1fd3154.png?tr=cm-pad_resize,w-1200' alt="1" />
-                            </SwiperSlide> */}
 
                         </Swiper>
                     </Grid>
