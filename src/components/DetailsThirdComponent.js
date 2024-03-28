@@ -21,11 +21,11 @@ const DetailsThirdComponent = () => {
     return (
         <>
             <Grid container sx={{ justifyContent: 'center', marginTop: '30px' }}>
-                <Grid sx={{ width:{xs:'95%', sm:'90%', lg:'70%'}, border: '1px solid red', display: 'flex', justifyContent:'center' }}>
-                    <Grid sx={{ width:{xs:'95%', sm:'70%',lg:'70%'}, border: '2px solid black', }}>
+                <Grid sx={{ width:{xs:'95%', sm:'90%', lg:'70%'},  display: 'flex', justifyContent:'center' }}>
+                    <Grid sx={{ width:{xs:'95%', sm:'70%',lg:'70%'}, }}>
                         <Typography sx={{ fontSize: '15px', fontWeight: 550 }}>Product Description</Typography>
                         <Grid container sx={{ justifyContent: 'center', backgroundColor: '#FFFFFF', marginTop: '15px', maxHeight: isExpanded ? 'none' : '200px', overflow: 'hidden', }}>
-                            <Grid sx={{ width: '85%', marginTop: '20px' }}>
+                            <Grid sx={{ width: '85%', marginTop: '30px' }}>
                                 <img style={{ maxWidth: '100%', height: 'auto' }} src="https://adn-static1.nykaa.com/media/wysiwyg/23657_01.jpg" alt="" />
                                 <img style={{ maxWidth: '100%', height: 'auto' }} src="https://adn-static1.nykaa.com/media/wysiwyg/23657_02.jpg" alt="" />
                                 <img style={{ maxWidth: '100%', height: 'auto' }} src="https://adn-static1.nykaa.com/media/wysiwyg/23657_03.jpg" alt="" />
@@ -38,7 +38,7 @@ const DetailsThirdComponent = () => {
 
                             </Grid>
                         </Grid>
-                        <Grid container sx={{ justifyContent: 'center', paddingTop: '20px', background: '#FFFFFF' }}>
+                        <Grid container sx={{ justifyContent: 'center', paddingTop: '20px', background: '#FFFFFF',boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
                             <Grid sx={{ width: '95%', borderTop: '1px solid lightgrey', }}>
                                 <Grid sx={{ margin: '10px 0px', alignItems: 'center', display: 'flex', justifyContent: 'center' }}>
                                     <Typography sx={{ fontSize: '12px', fontWeight: 550, color: '#E80071', cursor: 'pointer' }} onClick={handleToggleExpand}> {isExpanded ? 'Read Less' : 'Read More'} </Typography>
@@ -50,7 +50,7 @@ const DetailsThirdComponent = () => {
                         <DetailsThirdSubOneSwiperComponent />
                         <DetailsThirdSubTwoComponent />
                     </Grid>
-                    <Grid sx={{ width:{sm:'28%',lg:'30%'}, border: '2px solid blue', display:{xs:'none', sm:'block'}, paddingLeft:{sm:'10px', md:'0px'}, paddingTop:'30px' }}>
+                    <Grid sx={{ width:{sm:'28%',lg:'30%'},display:{xs:'none', sm:'block'}, paddingLeft:{sm:'10px', md:'0px'}, paddingTop:'30px' }}>
                         <Grid sx={{position: 'sticky', top:110,}}>
                             <Card sx={{ maxWidth: 205, margin: 'auto', boxShadow: 'none' }} >
                                 <CardActionArea  >

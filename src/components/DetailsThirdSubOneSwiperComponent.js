@@ -35,7 +35,7 @@ const DetailsThirdSubOneSwiperComponent = () => {
                 <Grid sx={{ margin: '20px 0px' }}>
                     <Typography sx={{ fontSize: { xs: '13px', sm: '15px' }, fontWeight: 550 }}>Customers also Viewed</Typography>
                 </Grid>
-                <Grid sx={{border:'2px solid red',}} >
+                <Grid  >
 
 
                     <Swiper

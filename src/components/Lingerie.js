@@ -23,7 +23,7 @@ const Lingerie = () => {
                         <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}
                 </Grid>
-                <Grid item md={2} sx={{backgroundColor:'#ebeae8', padding:'0px 25px' }}  >
+                <Grid item md={2} sx={{backgroundColor:'#EEEEEE', padding:'0px 25px' }}  >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', }}>Bags</Typography>
                     {eyesData.map((item) => (
                         <Typography sx={{ fontSize: '11px', padding: '3px',  paddingLeft: '5px' ,'&:hover':{color:'#E80071'} }}>{item.name}</Typography>
@@ -38,7 +38,7 @@ const Lingerie = () => {
                         <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' ,'&:hover':{color:'#E80071'}}}>{item.name}</Typography>
                     ))}
                 </Grid>
-                <Grid item md={2} sx={{backgroundColor:'#ebeae8', padding:'0px 25px' }} >
+                <Grid item md={2} sx={{backgroundColor:'#EEEEEE', padding:'0px 25px' }} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }}>Jewellery</Typography>
                     {toolData.map((item) => (
                         <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
@@ -50,10 +50,10 @@ const Lingerie = () => {
                         <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px' ,'&:hover':{color:'#E80071'}}}>{item.name}</Typography>
                     ))}
                 </Grid>
-                <Grid item md={2} sx={{backgroundColor:'#ebeae8', padding:'0px 25px' }} >
-                    <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', backgroundColor: '#ebeae8' }}>Featured Brands</Typography>
+                <Grid item md={2} sx={{backgroundColor:'#EEEEEE', padding:'0px 25px' }} >
+                    <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px',}}>Featured Brands</Typography>
                     {quickData.map((item) => (
-                        <Typography sx={{ fontSize: '11px', padding: '3px', backgroundColor: '#ebeae8', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
+                        <Typography sx={{ fontSize: '11px', padding: '3px',  paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}
                 </Grid>
 

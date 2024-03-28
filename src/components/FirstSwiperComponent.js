@@ -17,7 +17,7 @@ const FirstSwiperComponent = () => {
     return (
         <>
             <Grid container sx={{justifyContent:'center',  marginTop:{xs:'140px',sm:'90px',md:'4px'}, backgroundColor:'white', paddingBottom:'40px'}}>
-                <Grid sx={{width:{md:'90%',lg:'90%',sm:"90%",xs:"90%"},}}>
+                <Grid sx={{width:{md:'90%',lg:'90%',sm:"70%",xs:"90%"},}}>
 
                 
                 <Swiper

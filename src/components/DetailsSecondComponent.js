@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography,useMediaQuery, useTheme  } from "@mui/material";
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import ReactImageMagnify from 'react-image-magnify';
@@ -11,6 +11,9 @@ const DetailsSecondComponent = () => {
     console.log("first one ", firstImg)
 
     const [selectedImage, setSelectedImage] = useState(firstImg);
+
+    const theme = useTheme();
+    const isXsScreen = useMediaQuery(theme.breakpoints.down('xs'));
 
    
 
@@ -29,7 +32,7 @@ const DetailsSecondComponent = () => {
     return (
         <>
             <Grid container sx={{ justifyContent: 'center' }}>
-                <Grid sx={{ width: { xs: '95%', sm: '90%', md: '85%', lg: '70%' }, marginTop: '30px' }}>
+                <Grid sx={{ width: { xs: '95%', sm: '90%', md: '85%', lg: '70%' }, marginTop: '30px' , boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.1)'}}>
                     <Grid container sx={{ width: '100%', display: 'flex', backgroundColor: '#FFFFFF', paddingTop:'20px' }}>
                         <Grid sx={{ width: { xs: '100%', md: '35%' },display: 'flex' }}>
 
@@ -53,16 +56,28 @@ const DetailsSecondComponent = () => {
                                         src: selectedImage,
                                     },
                                     
-                                    largeImage: {
+                                    // largeImage: {
+                                    //     src: selectedImage,
+                                    //     width: 1900,
+                                    //     height: 1800,
+                                        
+                                    // },
+                                    // enlargedImageContainerDimensions: {
+                                    //     width: '220%', 
+                                    //     height: '165%',
+                                      
+                                    // },
+                                    // isHintEnabled: true,
+                                    // shouldHideHintAfterFirstActivation: false
+
+                                    largeImage: isXsScreen ? undefined : {
                                         src: selectedImage,
                                         width: 1900,
                                         height: 1800,
-                                        
                                     },
                                     enlargedImageContainerDimensions: {
                                         width: '220%', 
                                         height: '165%',
-                                      
                                     },
                                     isHintEnabled: true,
                                     shouldHideHintAfterFirstActivation: false
@@ -143,7 +158,7 @@ const DetailsSecondComponent = () => {
                                 </Grid>
 
                             </Grid>
-                            <Grid container sx={{ borderTop: '1px solid lightgrey', backgroundColor: '#6F798114', display: 'flex', justifyContent: 'center', padding: '5px 0px', marginTop: '10px' }}>
+                            <Grid container sx={{ borderTop: '1px solid lightgrey', backgroundColor: '#6F798114', display: 'flex', justifyContent: 'center', padding: '9px 0px', marginTop: '10px' }}>
                                 <Grid sx={{ width: { xs: '100%', sm: '30%' }, alignItems: 'center', display: 'flex', marginTop: { xs: '5px', sm: '0px' }, justifyContent: 'center' }}>
                                     <Icon icon="carbon:ibm-data-product-exchange" width="20" height="20" />
                                     <Typography sx={{ fontSize: '11px', paddingLeft: '5px' }}>100% Genuine Products</Typography>

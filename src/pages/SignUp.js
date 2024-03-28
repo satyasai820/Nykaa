@@ -35,32 +35,76 @@ const SignUp = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState({});
+
+
+    const validateForm = () => {
+        const errors = {};
+        let isValid = true;
+
+        if (!name.trim()) {
+            errors.name = "Name is required";
+            isValid = false;
+        }else if (name.trim().length < 3) {
+            errors.name = "It must be at least 3 characters";
+            isValid = false;
+        }else if (/\d/.test(name.trim())) {
+            errors.name = "Name must not contain numbers";
+            isValid = false;
+        }else if (/[^a-zA-Z0-9]/.test(name.trim())) {
+            errors.name = "must not contain special characters";
+            isValid = false;
+        }
+
+        if (!email.trim()) {
+            errors.email = "Email is required";
+            isValid = false;
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            errors.email = "Email is invalid";
+            isValid = false;
+        }
+
+        if (!password.trim()) {
+            errors.password = "Password is required";
+            isValid = false;
+        }else if (password.trim().length < 6) {
+            errors.password = "It must be at least 6 characters";
+            isValid = false;
+        }
+
+        setErrors(errors);
+        return isValid;
+    };
+
+
+
 
     const changeHandleName = (e) => {
         const getName = e.target.value;
         setName(getName);
-        // console.log('this is name input data', getName)
     }
 
     const changeHandleEmail = (e) => {
         const getEmail = e.target.value;
         setEmail(getEmail);
-        // console.log('this is email input data', getEmail);
     }
 
     const changeHandlePassword = (e) => {
         const getPassword = e.target.value;
         setPassword(getPassword);
-        // console.log('this is the passwrd input data', getPassword);
     }
 
 
     const handleButtonClick = async (e) => {
         e.preventDefault();
 
-        if (email === '' || password === '') {
-            alert('Please fill the all detailes')
-        } else {
+        if (!validateForm()) {
+            return;
+        }
+
+        // if (email === '' || password === '') {
+        //     alert('Please fill the all detailes')
+        // } else {
 
 
 
@@ -118,7 +162,7 @@ const SignUp = () => {
                     alert('Please Create an account First')
                 }
             }
-        }
+        
 
 
 
@@ -150,14 +194,14 @@ const SignUp = () => {
                     </Grid>
                     <Grid container sx={{ justifyContent: 'center' }} >
                         {isSignIn ? (<Grid sx={{ marginTop: '40px', justifyContent: 'center' }}>
-                            <TextField placeholder="Enter Name" size="small" type="name" value={name} onChange={changeHandleName} />
-                        </Grid>) : (<Typography sx={{ color: '#E80071', marginTop: { xs: '30px', sm: '60px' }, display: { xs: 'none', sm: 'block' }, fontWeight: 'bold' }}>Please Log In</Typography>)}
+                            <TextField placeholder="Enter Name" size="small" type="name" value={name} onChange={changeHandleName}  error={!!errors.name} helperText={errors.name} />
+                        </Grid>) : (<Grid><Typography ></Typography></Grid>)}
 
                         <Grid sx={{ marginTop: '20px', }}>
-                            <TextField placeholder="Enter Email" size="small" type="email" value={email} onChange={changeHandleEmail} />
+                            <TextField placeholder="Enter Email" size="small" type="email" value={email} onChange={changeHandleEmail}  error={!!errors.email} helperText={errors.email}/>
                         </Grid>
                         <Grid sx={{ margin: '20px 20px', }}>
-                            <TextField placeholder="Enter Password" size="small" type="password" value={password} onChange={changeHandlePassword} />
+                            <TextField placeholder="Enter Password" size="small" type="password" value={password} onChange={changeHandlePassword} error={!!errors.password} helperText={errors.password} />
                         </Grid>
                     </Grid>
                     <Grid container sx={{ justifyContent: 'center', marginBottom: '20px', marginTop: '80px' }}>

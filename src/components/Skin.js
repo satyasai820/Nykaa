@@ -24,7 +24,7 @@ const Skin = () => {
                         <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>{item.name}</Typography>
                     ))}
                 </Grid>
-                <Grid item md={2} sx={{ backgroundColor: '#ebeae8',padding:'0px 15px' }}  >
+                <Grid item md={2} sx={{ backgroundColor: '#EEEEEE',padding:'0px 15px' }}  >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', }}>Trending Searches</Typography>
                     {trendingData.map((item) => (
                         <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>{item.name}</Typography>
@@ -50,7 +50,7 @@ const Skin = () => {
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', marginTop: '10px' }}>CSMS By Nykaa</Typography>
 
                 </Grid>
-                <Grid item md={2} sx={{ backgroundColor: '#ebeae8',padding:'0px 15px' }} >
+                <Grid item md={2} sx={{ backgroundColor: '#EEEEEE',padding:'0px 15px' }} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px' }}>Specialised Skincare</Typography>
                     <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>Acene Spot Correctors</Typography>
                     <Typography sx={{ fontSize: '11px', padding: '3px', paddingLeft: '5px','&:hover':{color:'#E80071'}  }}>Nose Strips</Typography>
@@ -83,7 +83,7 @@ const Skin = () => {
                     
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', marginTop:'12px' }}>Neck Creams</Typography>
                 </Grid>
-                <Grid item md={2} sx={{ backgroundColor: '#ebeae8',padding:'0px 18px' }} >
+                <Grid item md={2} sx={{ backgroundColor: '#EEEEEE',padding:'0px 18px' }} >
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', }}>Shop By Concern</Typography>
                     {firstData.map((item) => (
                         <Typography sx={{ fontSize: '11px', padding: '3px',  paddingLeft: '5px' ,'&:hover':{color:'#E80071'}  }}>{item.name}</Typography>
