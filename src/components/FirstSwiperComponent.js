@@ -35,6 +35,7 @@ const FirstSwiperComponent = () => {
                           slidesPerView: 2, 
                         },
                         764: {
+                          slidesPerView: 1,
                         },
                         576: {
                           slidesPerView: 1,

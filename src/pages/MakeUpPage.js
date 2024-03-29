@@ -25,6 +25,7 @@ import MakeupGuidesSwiperComponent from "../components/MakeupGuidesSwiperCompone
 import SwatchSwiperComponent from "../components/SwatchSwiperComponent";
 import MakeupCombosCardSwiperComponent from "../components/MakeupCombosCardSwiperComponent";
 import Footer from "../components/Footer";
+import ScrollUpComponent from "../components/ScrollUpComponent";
 
 
 const MakeUpPage = () => {
@@ -55,6 +56,7 @@ const MakeUpPage = () => {
         <SwatchSwiperComponent display='none' />
         <MakeupCombosCardSwiperComponent />
         <Footer />
+        <ScrollUpComponent />
         </>
     );
 }

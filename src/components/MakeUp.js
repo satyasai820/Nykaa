@@ -25,9 +25,9 @@ const MakeUp = () => {
             <Grid container >
                 <Grid item md={2}  sx={{padding:'0px 15px', cursor:'pointer'}}>
                     <Typography sx={{ fontSize: '12px', fontWeight: 'bold', paddingLeft: '6px', cursor:'pointer' }}  >Face</Typography>
-                        <Typography onClick={()=> navigate('/face/faceprimer')} sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>Face Primer</Typography>
-                        <Typography onClick={()=> navigate('/face/concealer')} sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>Concealer</Typography>
-                        <Typography onClick={()=> navigate('/face/foundation')} sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>Foundation</Typography>
+                        <Typography onClick={()=> navigate('/face/faceprimer')} sx={{ fontSize: '11px', padding: '3px', color: '#E80071',fontWeight:550, paddingLeft: '5px','&:hover':{color:'orange'} }}>Face Primer</Typography>
+                        <Typography onClick={()=> navigate('/face/concealer')} sx={{ fontSize: '11px', padding: '3px', color: 'gray',color: '#E80071',fontWeight:550, paddingLeft: '5px','&:hover':{color:'orange'} }}>Concealer</Typography>
+                        <Typography onClick={()=> navigate('/face/foundation')} sx={{ fontSize: '11px', padding: '3px', color: 'gray',color: '#E80071',fontWeight:550, paddingLeft: '5px','&:hover':{color:'orange'} }}>Foundation</Typography>
                     {faceData.map((item) => (
                         <Typography sx={{ fontSize: '11px', padding: '3px', color: 'gray', paddingLeft: '5px','&:hover':{color:'#E80071'} }}>{item.name}</Typography>
                     ))}

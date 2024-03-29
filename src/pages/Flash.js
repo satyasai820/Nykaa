@@ -20,6 +20,9 @@ import SwatchSwiperComponent from "../components/SwatchSwiperComponent";
 import HandPickSwiperComponent from "../components/HandPickSwiperComponent";
 import LastSwiperComponent from "../components/LastSwiperComponent";
 import Footer from "../components/Footer";
+import { Button, Grid } from "@mui/material";
+import { Icon } from "@iconify/react";
+import ScrollUpComponent from "../components/ScrollUpComponent";
 
 const Flash = () => {
     return(
@@ -45,6 +48,10 @@ const Flash = () => {
         <HandPickSwiperComponent />
         <LastSwiperComponent />
         <Footer />
+        {/* <Grid sx={{position:'sticky', bottom:0, textAlign:'end', padding:'0px 10px 20px 0px'}}>
+        <Button href="#" sx={{border:'1px solid black', backgroundColor:'#FFFFFF'}}> <Icon icon="prime:arrow-up" width="25" height="25"  style={{color: 'black'}} /> </Button>
+        </Grid> */}
+        <ScrollUpComponent />
         </>
     )
 }

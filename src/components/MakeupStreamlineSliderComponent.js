@@ -36,7 +36,7 @@ const MakeupStreamlineSliderComponent = () => {
                                         <img src='https://images-static.nykaa.com/uploads/5b5b1122-d4eb-4ff8-ae35-5e8e80d3cc71.jpg?tr=w-1200,cm-pad_resize' alt="1" />
                                     </SwiperSlide>
                                     <SwiperSlide>
-                                        <img src='https://images-static.nykaa.com/uploads/5b5b1122-d4eb-4ff8-ae35-5e8e80d3cc71.jpg?tr=w-1200,cm-pad_resize' alt="1" />
+                                        <img src='https://images-static.nykaa.com/uploads/64fabab7-ce84-4d6a-9797-fda764f205e1.jpg?tr=cm-pad_resize,w-1200' alt="1" />
                                     </SwiperSlide>
                                 
                         </Swiper>
