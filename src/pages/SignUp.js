@@ -1,10 +1,15 @@
 
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { Grid, TextField, Typography } from "@mui/material";
 import { Icon } from "@iconify/react";
 import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, signInWithPopup } from "firebase/auth";
 import { auth, provider } from "../firebase";
+
+//for toaste messages 
+import { ToastContainer, toast, Bounce } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 
 // google athentication 
@@ -17,7 +22,7 @@ export const googleAccount = (navigate) => {
             const token = result.user.accessToken;
             localStorage.setItem('accessToken', token);
             console.log('this is token google token man ', token);
-            localStorage.setItem('email',result.user.email);
+            localStorage.setItem('email', result.user.email);
             const Name = result.user.displayName;
             localStorage.setItem('displayName', Name)
             console.log("this is the name by google", Name);
@@ -31,11 +36,17 @@ export const googleAccount = (navigate) => {
 const SignUp = () => {
     const navigate = useNavigate();
 
-    const [isSignIn, setIsSignIn] = useState(true);
+    const [isSignIn, setIsSignIn] = useState(false);
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [errors, setErrors] = useState({});
+
+    // useEffect (()=> (
+    //     setIsSignIn(false)
+    // ),[])
+   
+
 
 
     const validateForm = () => {
@@ -45,13 +56,13 @@ const SignUp = () => {
         if (!name.trim()) {
             errors.name = "Name is required";
             isValid = false;
-        }else if (name.trim().length < 3) {
+        } else if (name.trim().length < 3) {
             errors.name = "It must be at least 3 characters";
             isValid = false;
-        }else if (/\d/.test(name.trim())) {
+        } else if (/\d/.test(name.trim())) {
             errors.name = "Name must not contain numbers";
             isValid = false;
-        }else if (/[^a-zA-Z0-9]/.test(name.trim())) {
+        } else if (/[^a-zA-Z0-9]/.test(name.trim())) {
             errors.name = "must not contain special characters";
             isValid = false;
         }
@@ -67,7 +78,7 @@ const SignUp = () => {
         if (!password.trim()) {
             errors.password = "Password is required";
             isValid = false;
-        }else if (password.trim().length < 6) {
+        } else if (password.trim().length < 6) {
             errors.password = "It must be at least 6 characters";
             isValid = false;
         }
@@ -96,6 +107,7 @@ const SignUp = () => {
 
 
     const handleButtonClick = async (e) => {
+        setIsSignIn(true)
         e.preventDefault();
 
         if (!validateForm()) {
@@ -108,68 +120,170 @@ const SignUp = () => {
 
 
 
-            if (isSignIn) {
+        if (isSignIn) {
 
-                try {
-                    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-                    const user = userCredential.user;
-                    await updateProfile(userCredential.user, {
-                        displayName: name,
-                    });
-                    console.log('this is the user', user);
-                    const token = await user.getIdToken();
-                    localStorage.setItem('email',userCredential.user.email);
-                    localStorage.setItem('accessToken', token)
-                    console.log('this is sign in token', token);
-                    localStorage.setItem('displayName', userCredential.user.displayName)
-                    const Name = localStorage.getItem(user.displayName);
+            try {
+                const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+                const user = userCredential.user;
+                await updateProfile(userCredential.user, {
+                    displayName: name,
+                });
+                console.log('this is the user', user);
+                const token = await user.getIdToken();
+                localStorage.setItem('email', userCredential.user.email);
+                localStorage.setItem('accessToken', token)
+                console.log('this is sign in token', token);
+                localStorage.setItem('displayName', userCredential.user.displayName)
+                const Name = localStorage.getItem(user.displayName);
 
-                    // console.log('User created successfully:', userCredential.user);
-                    console.log('User display name:', Name);
+                // console.log('User created successfully:', userCredential.user);
+                console.log('User display name:', Name);
 
-                    alert('Successfully Sign Up..!')
-                    setEmail('');
-                    setPassword('');
-                    setName('');
-                    navigate('/')
+                // alert('Successfully Sign Up..!')
+                // toast('Successfully Sign Up..!')
 
-                } catch (error) {
-                    console.error('Error creating user:', error.code, error.message);
-                    alert('Alredy have an account Please Log in')
-                }
+                setEmail('');
+                setPassword('');
+                setName('');
+                navigate('/')
 
-            } else {
+            } catch (error) {
+                console.error('Error creating user:', error.code, error.message);
+                // alert('Alredy have an account Please Log in')
 
-                try {
-
-                    const userCredential = await signInWithEmailAndPassword(auth, email, password)
-                    const user = userCredential.user;
-                    const token = await user.getIdToken();
-                    localStorage.setItem('accessToken', token);
-                    localStorage.setItem('email',userCredential.user.email);
-                    const Name = userCredential.user.displayName;
-                    localStorage.setItem('displayName', Name)
-                    localStorage.getItem('displayName', Name);
-                    console.log('This is the name in log in ', Name);
-                    console.log("this is the login token", token);
-
-                    alert('Successfully Log In..!')
-                    setEmail('');
-                    setPassword('');
-                    navigate('/')
-                } catch (error) {
-                    console.log(error, 'error occured')
-                    alert('Please Create an account First')
-                }
+                toast.error('Alredy have an account Please Log in', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
             }
-        
+
+        }
+        // else {
+
+        //     try {
+
+        //         alert('thisdfghj')
+        //         const userCredential = await signInWithEmailAndPassword(auth, email, password)
+        //         const user = userCredential.user;
+        //         const token = await user.getIdToken();
+        //         localStorage.setItem('accessToken', token);
+        //         localStorage.setItem('email', userCredential.user.email);
+        //         const Name = userCredential.user.displayName;
+        //         localStorage.setItem('displayName', Name)
+        //         localStorage.getItem('displayName', Name);
+        //         console.log('This is the name in log in ', Name);
+        //         console.log("this is the login token", token);
+
+        //         alert('Successfully Log In..!')
+        //         setEmail('');
+        //         setPassword('');
+        //         navigate('/')
+        //     } catch (error) {
+        //         console.log(error, 'error occured')
+        //         alert('Please Create an account First')
+        //         toast.info('Please Create an account First', {
+        //             position: "top-right",
+        //             autoClose: 5000,
+        //             hideProgressBar: false,
+        //             closeOnClick: true,
+        //             pauseOnHover: true,
+        //             draggable: true,
+        //             progress: undefined,
+        //             theme: "colored",
+        //             transition: Bounce,
+        //             });
+
+
+        //     }
+        // }
+
 
 
 
     };
 
+
+    const handleButtonLogIn = async () => {
+
+        // alert("sdfgh")
+        
+        // console.log("this is on login function ---->", isSignIn)
+        // if (!validateForm()) {
+        //     setValidate(true)
+        // }
+            
+        if( email === '' || password === ''){
+            toast.error('Please Fill all the Details...', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+        
+                progress: undefined,
+                theme: "colored",
+                transition: Bounce,
+            })
+        }else{
+
+       
+
+        if (isSignIn === false) {
+
+
+            try {
+
+
+                const userCredential = await signInWithEmailAndPassword(auth, email, password)
+                const user = userCredential.user;
+                const token = await user.getIdToken();
+                localStorage.setItem('accessToken', token);
+                localStorage.setItem('email', userCredential.user.email);
+                const Name = userCredential.user.displayName;
+                localStorage.setItem('displayName', Name)
+                localStorage.getItem('displayName', Name);
+                console.log('This is the name in log in ', Name);
+                console.log("this is the login token", token);
+
+                // alert('Successfully Log In..!')
+                setEmail('');
+                setPassword('');
+                navigate('/')
+            } catch (error) {
+                console.log(error, 'error occured')
+                toast.info('Please Create an account First', {
+                    position: "top-right",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "colored",
+                    transition: Bounce,
+                });
+
+
+            }
+        }
+    }
+        
+    
+    
+
+    }
+
     const toggleSignInMode = () => {
         setIsSignIn((prevIsSignIn) => !prevIsSignIn);
+
     };
 
 
@@ -184,7 +298,7 @@ const SignUp = () => {
             <Grid container sx={{ justifyContent: 'center', }}>
                 <Grid sx={{ width: { xs: '90%', sm: '40%', md: '30%', lg: '25%', xl: '20%' }, border: '1px solid lightgrey', borderTopRightRadius: '20px', borderTopLeftRadius: '20px', marginTop: '60px', background: '#FFFFFF' }}>
                     <Grid sx={{ display: 'flex', marginTop: '20px', paddingBottom: '5px', borderBottom: '1px solid lightgray' }}>
-                        <Grid>
+                        <Grid sx={{ paddingLeft: '10px' }}>
                             <Icon onClick={() => navigate('/')} icon="iconamoon:close-light" width="25" height="25" />
 
                         </Grid>
@@ -194,11 +308,11 @@ const SignUp = () => {
                     </Grid>
                     <Grid container sx={{ justifyContent: 'center' }} >
                         {isSignIn ? (<Grid sx={{ marginTop: '40px', justifyContent: 'center' }}>
-                            <TextField placeholder="Enter Name" size="small" type="name" value={name} onChange={changeHandleName}  error={!!errors.name} helperText={errors.name} />
+                            <TextField placeholder="Enter Name" size="small" type="name" value={name} onChange={changeHandleName} error={!!errors.name} helperText={errors.name} />
                         </Grid>) : (<Grid><Typography ></Typography></Grid>)}
 
                         <Grid sx={{ marginTop: '20px', }}>
-                            <TextField placeholder="Enter Email" size="small" type="email" value={email} onChange={changeHandleEmail}  error={!!errors.email} helperText={errors.email}/>
+                            <TextField placeholder="Enter Email" size="small" type="email" value={email} onChange={changeHandleEmail} error={!!errors.email} helperText={errors.email} />
                         </Grid>
                         <Grid sx={{ margin: '20px 20px', }}>
                             <TextField placeholder="Enter Password" size="small" type="password" value={password} onChange={changeHandlePassword} error={!!errors.password} helperText={errors.password} />
@@ -206,7 +320,11 @@ const SignUp = () => {
                     </Grid>
                     <Grid container sx={{ justifyContent: 'center', marginBottom: '20px', marginTop: '80px' }}>
                         <Grid sx={{ textAlign: 'center', width: '70%', cursor: 'pointer' }}>
-                            <Typography onClick={handleButtonClick} sx={{ border: '1px solid #E80071', backgroundColor: '#E80071', color: '#FFFFFF', fontWeight: 550, padding: '10px' }} >{isSignIn ? 'PROCEED' : 'Log In'} </Typography>
+                            {isSignIn ? (<Typography onClick={handleButtonClick} sx={{ border: '1px solid #E80071', backgroundColor: '#E80071', color: '#FFFFFF', fontWeight: 550, padding: '10px' }} >PROCEED</Typography>) : (
+                                <Typography onClick={handleButtonLogIn} sx={{ border: '1px solid #E80071', backgroundColor: '#E80071', color: '#FFFFFF', fontWeight: 550, padding: '10px' }} >Log In </Typography>
+                            )}
+
+
                         </Grid>
                     </Grid>
                     <Grid sx={{ textAlign: 'center', marginBottom: '30px' }}>
@@ -216,6 +334,7 @@ const SignUp = () => {
                 </Grid>
 
             </Grid>
+            <ToastContainer />
         </>
     );
 }

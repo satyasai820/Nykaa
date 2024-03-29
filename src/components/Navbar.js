@@ -15,6 +15,7 @@ import { auth } from "../firebase";
 import Modal from '@mui/material/Modal';
 import { googleAccount } from '../pages/SignUp'
 
+
 import List from "@mui/material/List";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
@@ -52,6 +53,9 @@ const Navbar = () => {
     const Name = localStorage.getItem('displayName');
     console.log('this is the name in nav bar', Name);
     console.log("this is the token in nav bar ", token)
+
+
+    
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -119,6 +123,9 @@ const Navbar = () => {
 
 
     const brandData = [{n:'Lakme'},{n:'Nykaa Cosmetics'},{n:'M.A.C'},{n:'The Face short'},{n:'Nykaa Naturals'},{n:'Biotique'},{n:'Hudabeauty'},{n:'Kama Ayurveda'},{n:'Innisfree'},{n:'The Body Shop'},{n:'L`Oreal Paris'}]
+
+
+
 
     return (
         <>
@@ -479,7 +486,7 @@ const Navbar = () => {
             </Drawer>
 
 
-
+        
 
 
 

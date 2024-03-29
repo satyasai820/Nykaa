@@ -1,4 +1,4 @@
-import { Grid, Typography,useMediaQuery, useTheme  } from "@mui/material";
+import { Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import React, { useState } from "react";
 import { Icon } from "@iconify/react";
 import ReactImageMagnify from 'react-image-magnify';
@@ -14,15 +14,16 @@ const DetailsSecondComponent = () => {
 
     const theme = useTheme();
     const isXsScreen = useMediaQuery(theme.breakpoints.down('xs'));
+    const isSmScreen = useMediaQuery(theme.breakpoints.down('md'));
 
-   
+
 
     const handleSetImg = (img) => {
         console.log('this is the img that user clicked---->', img)
         setSelectedImage(img);
     }
 
-    
+
 
     const smallImages = [{ img: 'https://images-static.nykaa.com/media/icons/8901030561924_blurperfectprimer.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/lakme00000766_glowprimernew.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8901030725692_undercovergelprimer.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245715984_02ylight.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245715991_03plight.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245716011_05pmedium.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245716028_06ymedium.jpg?tr=w-50,h-50' }, { img: 'https://images-static.nykaa.com/media/icons/8904245716080_12ytan.jpg?tr=w-50,h-50' }]
 
@@ -32,24 +33,24 @@ const DetailsSecondComponent = () => {
     return (
         <>
             <Grid container sx={{ justifyContent: 'center' }}>
-                <Grid sx={{ width: { xs: '95%', sm: '90%', md: '85%', lg: '70%' }, marginTop: '30px' , boxShadow:'0px 4px 6px rgba(0, 0, 0, 0.1)'}}>
-                    <Grid container sx={{ width: '100%', display: 'flex', backgroundColor: '#FFFFFF', paddingTop:'20px' }}>
-                        <Grid sx={{ width: { xs: '100%', md: '35%' },display: 'flex' }}>
+                <Grid sx={{ width: { xs: '95%', sm: '90%', md: '85%', lg: '70%' }, marginTop: '30px', boxShadow: '0px 4px 6px rgba(0, 0, 0, 0.1)' }}>
+                    <Grid container sx={{ width: '100%', display: 'flex', backgroundColor: '#FFFFFF', paddingTop: '20px' }}>
+                        <Grid sx={{ width: { xs: '100%', md: '35%' }, display: 'flex' }}>
 
-                            
-                            <Grid sx={{ width: '15%', margin:{xs:'2vmin 0px 0px 10px', sm:'40px 0px 0px 10px'},  }}>
+
+                            <Grid sx={{ width: '15%', margin: { xs: '2vmin 0px 0px 10px', sm: '40px 0px 0px 10px' }, }}>
                                 {cardsData.map((item) => (
                                     <>
                                         <Grid sx={{ marginBottom: '10px', }} onClick={() => handleSetImg(item.img)} >
-                                            <img src={item.img} style={{ width: '40px', height: 'auto' , border:'1px solid lightgrey'}} />
+                                            <img src={item.img} style={{ width: '40px', height: 'auto', border: '1px solid lightgrey' }} />
 
                                         </Grid>
                                     </>
                                 ))}
                             </Grid>
 
-                            <Grid sx={{ width: '85%', }}>
-                                <ReactImageMagnify {...{
+                            <Grid sx={{ width: '85%',  }}>
+                                {/* <ReactImageMagnify {...{
                                     smallImage: {
                                         alt: 'Wristwatch by Ted Baker London',
                                         isFluidWidth: true,
@@ -70,22 +71,52 @@ const DetailsSecondComponent = () => {
                                     // isHintEnabled: true,
                                     // shouldHideHintAfterFirstActivation: false
 
-                                    largeImage: isXsScreen ? undefined : {
+                                    largeImage: (isXsScreen || isSmScreen) ? undefined : {
                                         src: selectedImage,
                                         width: 1900,
                                         height: 1800,
                                     },
                                     enlargedImageContainerDimensions: {
-                                        width: '220%', 
+                                        width: '220%',
                                         height: '165%',
                                     },
                                     isHintEnabled: true,
-                                    shouldHideHintAfterFirstActivation: false
-                                }} />
+                                    shouldHideHintAfterFirstActivation: false,
+                                    pressDuration: 0, // set a very high value or disable it
+                                    hoverDelayInMs: 0, // to activate zoom instantly on hover
+                                }} /> */}
+                                <Grid sx={{display:{xs:'none', md:'block'}}}>
+                                    <ReactImageMagnify {...{
+                                        smallImage: {
+                                            alt: 'Wristwatch by Ted Baker London',
+                                            isFluidWidth: true,
+                                            src: selectedImage,
+                                        },
+                                        largeImage: {
+                                            src: selectedImage,
+                                            width: 1900,
+                                            height: 1800,
+                                        },
+                                        enlargedImageContainerDimensions: {
+                                            width: '220%',
+                                            height: '165%',
+                                        },
+                                        isHintEnabled: true,
+                                        shouldHideHintAfterFirstActivation: false,
+                                        pressDuration: 0, // set a very high value or disable it
+                                        hoverDelayInMs: 0, // to activate zoom instantly on hover
+                                    }} />
+                                </Grid>
+                                 <Grid sx={{display:{xs:'block', md:'none'}, paddingRight:{xs:'10px', sm:'20px'}}}>
+                                    
+                                    <img style={{maxWidth:'100%', height:'auto'}} src={selectedImage} />
+                                    </Grid>
+                               
                             </Grid>
+                           
 
                         </Grid>
-                        <Grid container sx={{ width: { xs: '100%', md: '65%' }, borderLeft:'1px solid lightgrey' }}>
+                        <Grid container sx={{ width: { xs: '100%', md: '65%' }, borderLeft: '1px solid lightgrey' }}>
                             <Grid sx={{ paddingLeft: { xs: '10px', sm: '15px' }, }}>
                                 <Typography sx={{ fontSize: '16px', color: '#001325', fontWeight: 500 }}>Maybelline New York Fit Me Matte+Poreless Liquid Foundation 16H Oil Control - 128 Warm Nude</Typography>
                                 <Typography sx={{ fontSize: '13px', marginBottom: '10px' }}>(30ml)</Typography>
