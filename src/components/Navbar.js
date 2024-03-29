@@ -133,8 +133,8 @@ const Navbar = () => {
             <AppBar sx={{ backgroundColor: 'white', marginTop: '29px', }}>
                 <Grid container sx={{ justifyContent: 'center', }} >
                     <Grid container sx={{ width: { lg: '70%', xl: '65%' }, alignItems: 'center', display: 'flex' }} >
-                        <Grid sx={{ marginRight: { xs: '5px', sm: '10px' }, marginLeft: { xs: '5px', sm: '10px' }, display: { xs: 'block', md: 'none', color: 'black' } }}>
-                            <Icon onClick={handleOpen} icon="el:lines" width="20" height="20" />
+                        <Grid sx={{ marginRight: { xs: '5px', sm: '10px' }, marginLeft: { xs: '5px', sm: '10px' }, display: { xs: 'block', md: 'none', color: 'black', padding:' 0px 5px' } }}>
+                            <Icon onClick={handleOpen} icon="el:lines" width="18" height="18" />
                         </Grid>
                         <Grid sx={{ cursor: 'pointer', }} onClick={() => navigate('/')} >
                             <img src="https://cdn.iconscout.com/icon/free/png-256/free-nykaa-3384872-2822953.png?f=webp" alt="logo" width={60} height={60} />
