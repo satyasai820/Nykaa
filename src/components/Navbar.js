@@ -16,6 +16,15 @@ import Modal from '@mui/material/Modal';
 import { googleAccount } from '../pages/SignUp'
 
 
+import List from "@mui/material/List";
+import ListItemButton from "@mui/material/ListItemButton";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import Collapse from "@mui/material/Collapse";
+import ExpandLess from "@mui/icons-material/ExpandLess";
+import ExpandMore from "@mui/icons-material/ExpandMore";
+
+
 
 const style = {
     position: 'absolute',
@@ -25,7 +34,7 @@ const style = {
     width: 200,
     bgcolor: 'background.paper',
     boxShadow: 24,
-    
+
 };
 
 
@@ -36,12 +45,17 @@ const Navbar = () => {
     const [expanded, setExpanded] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const [openModalForm, setOpenModalForm] = useState(false);
+    const [openSmallMenu, setOpenSmallMenu] = React.useState(false);
+
     const navigate = useNavigate();
 
     let token = localStorage.getItem('accessToken');
     const Name = localStorage.getItem('displayName');
     console.log('this is the name in nav bar', Name);
     console.log("this is the token in nav bar ", token)
+
+
+    
 
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
@@ -90,6 +104,28 @@ const Navbar = () => {
         setAnchorEl(null);
     }
     const handleCloseForm = () => setOpenModalForm(false);
+
+
+
+    // dropdown for small screen 
+
+
+
+
+    const handleClickSmallMenu = () => {
+        setOpenSmallMenu(!openSmallMenu);
+    };
+
+    const catData = [{ n: 'Compact' }, { n: 'Contour' }, { n: 'Loose Powder' }, { n: 'Blush' }, { n: 'BB & CC Cream' }, { n: 'Highlighters' }, { n: 'Setting Spary' }, { n: 'Makeup Remover' }, { n: 'Sindoor' }, { n: 'Tinted Moisturizer' }, { n: 'Bronzer' }]
+
+
+    const skinData = [{n:'Cleansers'},{n:'Moisturizers'},{n:'Sun Care'},{n:'Shop Toners & Mists'},{n:'Masks'},{n:'Lip Care'},{n:'Eye Care'},{n:'Dermocosmetic Brands'},{n:'Specialised Skin Care'},{n:'Body Care'},{n:'Hands & Feet'},{n:'Kits & Combos'},{n:'Skin Tools'},{n:'Skin Supplements'},{n:'Shop By Concern'},]
+
+
+    const brandData = [{n:'Lakme'},{n:'Nykaa Cosmetics'},{n:'M.A.C'},{n:'The Face short'},{n:'Nykaa Naturals'},{n:'Biotique'},{n:'Hudabeauty'},{n:'Kama Ayurveda'},{n:'Innisfree'},{n:'The Body Shop'},{n:'L`Oreal Paris'}]
+
+
+
 
     return (
         <>
@@ -146,7 +182,7 @@ const Navbar = () => {
 
 
                                         <Grid sx={{ display: 'flex', alignItems: 'center', }}>
-                                            <Icon onClick={handleOpenForm} icon="ant-design:user-outlined" width="20" height="20" style={{ color: 'black', marginRight: '5px', cursor:'pointer' }} />
+                                            <Icon onClick={handleOpenForm} icon="ant-design:user-outlined" width="20" height="20" style={{ color: 'black', marginRight: '5px', cursor: 'pointer' }} />
 
                                             {/* <Modal
                                                 open={openModalForm}
@@ -221,23 +257,23 @@ const Navbar = () => {
 
 
                                         <Modal
-                                                open={openModalForm}
-                                                onClose={handleCloseForm}
-                                                aria-labelledby="modal-modal-title"
-                                                aria-describedby="modal-modal-description"
-                                            >
-                                                <Box sx={style}>
+                                            open={openModalForm}
+                                            onClose={handleCloseForm}
+                                            aria-labelledby="modal-modal-title"
+                                            aria-describedby="modal-modal-description"
+                                        >
+                                            <Box sx={style}>
 
-                                                    <Grid sx={{  padding: '5px'  }}>
-                                                        <Typography sx={{ padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center' }}>  <Icon style={{color:'#000000', marginRight:'5px'}} icon='fontisto:truck' width="15" height="15" />Orders</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center'   }} onClick={(()=>{navigate('/profile')})} > <Icon style={{color:'#000000', marginRight:'5px'}} icon='iconamoon:profile-circle-fill' width="15" height="15" />Profile</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center'   }}> <Icon style={{color:'#000000', marginRight:'5px'}} icon='ion:wallet-outline' width="15" height="15" />Wallet</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center'   }}> <Icon style={{color:'#000000', marginRight:'5px'}} icon='icon-park-solid:like' width="15" height="15" />Wishlist</Typography>
-                                                        <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px',  color: '#00000', cursor: 'pointer', alignItems:'center', display:'flex', justifyContent:'center'   }} onClick={handleLogOut}> <Icon style={{color:'#000000', marginRight:'5px'}} icon='icons8:shutdown' width="15" height="15" />Logout</Typography>
-                                                    </Grid>
+                                                <Grid sx={{ padding: '5px' }}>
+                                                    <Typography sx={{ padding: '10px', fontSize: '11px', color: '#00000', cursor: 'pointer', alignItems: 'center', display: 'flex', justifyContent: 'center' }}>  <Icon style={{ color: '#000000', marginRight: '5px' }} icon='fontisto:truck' width="15" height="15" />Orders</Typography>
+                                                    <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', color: '#00000', cursor: 'pointer', alignItems: 'center', display: 'flex', justifyContent: 'center' }} onClick={(() => { navigate('/profile') })} > <Icon style={{ color: '#000000', marginRight: '5px' }} icon='iconamoon:profile-circle-fill' width="15" height="15" />Profile</Typography>
+                                                    <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', color: '#00000', cursor: 'pointer', alignItems: 'center', display: 'flex', justifyContent: 'center' }}> <Icon style={{ color: '#000000', marginRight: '5px' }} icon='ion:wallet-outline' width="15" height="15" />Wallet</Typography>
+                                                    <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', color: '#00000', cursor: 'pointer', alignItems: 'center', display: 'flex', justifyContent: 'center' }}> <Icon style={{ color: '#000000', marginRight: '5px' }} icon='icon-park-solid:like' width="15" height="15" />Wishlist</Typography>
+                                                    <Typography sx={{ borderTop: '1px solid lightgray', padding: '10px', fontSize: '11px', color: '#00000', cursor: 'pointer', alignItems: 'center', display: 'flex', justifyContent: 'center' }} onClick={handleLogOut}> <Icon style={{ color: '#000000', marginRight: '5px' }} icon='icons8:shutdown' width="15" height="15" />Logout</Typography>
+                                                </Grid>
 
-                                                </Box>
-                                            </Modal>
+                                            </Box>
+                                        </Modal>
 
 
                                         {/* <Modal
@@ -330,57 +366,129 @@ const Navbar = () => {
                 </Grid>
             </AppBar>
 
-            <Drawer anchor="left" open={isDrawerOpen} onClose={handleClose}>
-                <Tabs value={tabValue} onChange={handleTabChange}>
-                    <Tab label="Categories" />
-                    <Tab label="Brands" />
+            <Drawer anchor="left" PaperProps={{
+                sx: {
+                    width: '70%'
+                }
+            }} open={isDrawerOpen} onClose={handleClose}>
+                <Tabs value={tabValue} onChange={handleTabChange}
+                    sx={{
+
+                        '& .MuiTabs-indicator': {
+                            backgroundColor: '#E80071'
+                        },
+                        '& .MuiTab-root': {
+                            color: 'black',
+                            fontWeight: 550,
+                        },
+                        '& .Mui-selected': {
+                            color: '#E80071 !important',
+                            fontWeight: 550,
+                        },
+                    }}
+                >
+                    <Tab sx={{ width: '50%' }} label="Categories" />
+                    <Tab sx={{ width: '50%' }} label="Brands" />
                 </Tabs>
                 {tabValue === 0 && (
-                    <Accordion expanded={expanded} onChange={handleExpansion}
-                        sx={{ border: '1px solid lightgrey', boxShadow: 'none', borderRadius: 'none', '& .MuiAccordionSummary-content': { alignItems: 'center' }, '& .MuiIconButton-root': { color: 'white' }, }}>
-                        <AccordionSummary sx={{ '&:hover': { backgroundColor: '#E80071', color: 'white' } }} expandIcon={<Icon icon="basil:plus-outline" color='black' width="25" height="25" />} aria-controls="panel1-content" id="panel1-header">
-                            <Typography >Make Up</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails >
-                            <Typography >Hello</Typography>
-                            <Typography>Hello</Typography>
-                            <Typography> Hello </Typography>
-                        </AccordionDetails>
-                    </Accordion>
+                    <>
+                        {/* <List>
+                            <ListItemButton
+                                sx={{
+                                    backgroundColor: "#E80071",
+                                   
+                                    "&:hover": {
+                                        backgroundColor: "#E80071", 
+                                    },
+                                }}
+                                onClick={handleClickSmallMenu}
+                            >
+                            
+                                <ListItemText sx={{color:'white', fontWeight:550,}} primary="MakeUp" />
+                                {openSmallMenu ? <ExpandLess /> : <ExpandMore />}
+                            </ListItemButton>
+                            <Collapse in={openSmallMenu} timeout="auto" unmountOnExit>
+                                <List component="div" disablePadding>
+                                    <ListItemButton sx={{ display:'block',  }}>
+                                        <ListItemText sx={{fontSize:'64px !important'}} primary="Starred" />
+                                        <ListItemText primary="Starred" />
+                                        <ListItemText primary="Starred" />
+                                        <ListItemText primary="Starred" />
+                                        <ListItemText primary="Starred" />
+                                        <ListItemText primary="Starred" />
+                                    </ListItemButton>
+                                </List>
+                                </Collapse>
+                                </List> */}
+                        <Grid sx={{ marginTop: '10px', display: 'flex', padding: '10px 15px', border: '1px solid red', backgroundColor: '#E80071', color: '#FFFFFF', alignItems: 'center' }}>
+                            <Typography sx={{ fontWeight: 550, fontSize: '15px' }} onClick={()=>navigate('/makeup')}>Make Up</Typography>
+                            {/* <Icon icon="ic:sharp-plus" width="20" height="20" style={{ marginLeft: 'auto' }} /> */}
+
+                        </Grid>
+                        {/* <Grid sx={{ display: 'flex', padding: '10px 15px', borderBottom: '1px solid lightgrey', color: '#E80071', alignItems: 'center' }}>
+                            <Typography sx={{ fontWeight: 550, fontSize: '15px' }}>Face</Typography>
+
+                        </Grid> */}
+                        <Grid sx={{ display: 'flex', padding: '10px 15px', borderBottom: '1px solid white', color: '#E80071', alignItems: 'center', backgroundColor: '#EEEEEE' }}>
+                            <Typography sx={{ fontWeight: 550, fontSize: '15px' }} onClick={()=>navigate('/face/faceprimer')}>Face Primer</Typography>
+
+                        </Grid>
+                        <Grid sx={{ display: 'flex', padding: '10px 15px', borderBottom: '1px solid white', color: '#E80071', alignItems: 'center', backgroundColor: '#EEEEEE' }}>
+                            <Typography sx={{ fontWeight: 550, fontSize: '15px' }} onClick={()=>navigate('/face/concealer')}>Concealer</Typography>
+
+                        </Grid>
+                        <Grid sx={{ display: 'flex', padding: '10px 15px', borderBottom: '1px solid white', color: '#E80071', alignItems: 'center', backgroundColor: '#EEEEEE' }}>
+                            <Typography sx={{ fontWeight: 550, fontSize: '15px' }} onClick={()=>navigate('/face/foundation')}>Foundation</Typography>
+
+                        </Grid>
+                        {catData.map((item) => (
+                            <>
+                                <Grid sx={{ display: 'flex', padding: '10px 15px', borderBottom: '1px solid white', color: '#000000', alignItems: 'center', backgroundColor: '#EEEEEE' }}>
+                                    <Typography sx={{ fontWeight: 550, fontSize: '15px' }}>{item.n}</Typography>
+
+                                </Grid>
+                            </>
+                        ))}
+
+                        <Grid sx={{  display: 'flex', padding: '10px 15px', border: '1px solid red', backgroundColor: '#E80071', color: '#FFFFFF', alignItems: 'center' }}>
+                            <Typography sx={{ fontWeight: 550, fontSize: '15px' }}>Skin</Typography>
+                            {/* <Icon icon="ic:sharp-plus" width="20" height="20" style={{ marginLeft: 'auto' }} /> */}
+
+                        </Grid>
+
+                        {skinData.map((item) => (
+                            <>
+                                <Grid sx={{ display: 'flex', padding: '10px 15px', borderBottom: '1px solid white', color: '#000000', alignItems: 'center', backgroundColor: '#EEEEEE' }}>
+                                    <Typography sx={{ fontWeight: 550, fontSize: '15px' }}>{item.n}</Typography>
+
+                                </Grid>
+                            </>
+                        ))}
+
+                    </>
                 )}
                 {tabValue === 1 && (
-                    <Accordion
-                        expanded={expanded}
-                        onChange={handleExpansion}
-                        sx={{
-                            border: '1px solid lightgrey',
-                            boxShadow: 'none',
-                            borderRadius: 'none',
-                            '& .MuiAccordionSummary-content': { alignItems: 'center' },
-                            '& .MuiIconButton-root': { color: 'white' },
-                        }}
-                    >
-                        <AccordionSummary sx={{ '&:hover': { backgroundColor: '#E80071', color: 'white' } }} expandIcon={<Icon icon="basil:plus-outline" color='black' width="25" height="25" />} aria-controls="panel1-content" id="panel1-header">
-                            <Typography >Make Up</Typography>
-                        </AccordionSummary>
-                        <AccordionDetails >
-                            <Typography >Hello</Typography>
-                            <Typography>
-                                Hello
-                            </Typography>
-                            <Typography>
-                                Hello
-                            </Typography>
-                        </AccordionDetails>
-                    </Accordion>
+
+                    <>
+                    {brandData.map((item) => (
+                        <>
+                         <Grid sx={{ display: 'flex', padding: '10px 15px', borderBottom: '1px solid white', color: '#000000', alignItems: 'center', backgroundColor: '#EEEEEE' }}>
+                        <Typography sx={{ fontWeight: 550, fontSize: '15px' }}>{item.n}</Typography>
+
+                    </Grid>
+                        </>
+                    ))}
+                    </>
+                   
+
                 )}
 
             </Drawer>
 
 
+        
 
 
-          
 
         </>
     );

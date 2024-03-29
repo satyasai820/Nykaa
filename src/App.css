@@ -377,19 +377,6 @@ body {
 }
 
 
-/* .swiper {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  font-size: 12px;
-  height: 'auto';
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
-  padding: 30px;
-} */
-
 
 .faceSlider{
   width: 100%;
@@ -402,14 +389,6 @@ body {
   background-color: #E80071; /* No quotes around color name */
 }
 
-/* .GridContent {
-  display: none;
-}
-
-.Container:hover .GridContent {
-  display: block;
-} */
-
 
 .gridContent {
   display: none;
@@ -418,3 +397,13 @@ body {
 .gridContainer:hover .gridContent {
   display: block;
 }
+
+
+.detailsSwiper {
+  width: 100%;
+  height: auto;
+  margin:'20px auto';
+  --swiper-navigation-size: '15px',
+}
+
+
